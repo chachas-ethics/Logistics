@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      width: 100%;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 999;
+      height: 79px;
+    }
+
+    
+
+    .nav-links {
+      list-style: none;
+      display: none;
+      gap: 20px;
+  top: 60px;
+  right: 20px;
+  background: white;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  z-index: 1000;
+
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+      display: flex;
+    }
+
+    @media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: white;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+  }}
+
+    .nav-links a:hover {
+      color: #007bff;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+      z-index: 1001;
+      
+    }
+      
+
+      .hero {
+    height: 100vh;
+    background: url('thumbnails/cargoplane.webp') 
+                no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+    position: relative;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+
+  .hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .hero button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .hero button:hover {
+    background: #0056b3;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 32px;
+    }
+    .hero p {
+      font-size: 18px;
+    }
+  }
+
+  .about {
+    padding: 80px 20px;
+    background: #f9f9f9;
+    color: #333;
+    font-family: Arial, sans-serif;
+   
+    margin-top: 50px;
+   
+  }
+
+  .about::after{
+     background: rgba(0,0,0,0.9);
+  }
+
+  .about .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .about h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .about .intro {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 50px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-details {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .about-details > div {
+    flex: 1 1 400px;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .about h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .about p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .about ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .about ul li {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .about ul li strong {
+    color: #007bff;
+  }
+
+  @media (max-width: 768px) {
+    .about h2 {
+      font-size: 28px;
+    }
+    .about .intro {
+      font-size: 16px;
+    }
+    .about h3 {
+      font-size: 20px;
+    }
+  }
+
+  .services {
+    padding: 80px 20px;
+    background: #fff;
+    color: #333;
+    font-family: Arial, sans-serif;
+  }
+
+  .services .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .services h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .services .intro {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 50px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+  }
+
+  .service-card {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
+
+  .service-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #007bff;
+  }
+
+  .service-card p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .services h2 {
+      font-size: 28px;
+    }
+    .services .intro {
+      font-size: 16px;
+    }
+    .service-card h3 {
+      font-size: 20px;
+    }
+  }
+
+  .quote {
+    padding: 80px 20px;
+    background: #f9f9f9;
+    color: #333;
+    font-family: Arial, sans-serif;
+  }
+
+  .quote .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .quote h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .quote .intro {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 50px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  .quote-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+  }
+
+  /* Form */
+  .quote-form {
+    flex: 1 1 500px;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .quote-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .quote-form input,
+  .quote-form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .quote-form button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .quote-form button:hover {
+    background: #0056b3;
+  }
+
+  /* Direct Contact */
+  .direct-contact {
+    flex: 1 1 300px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  .direct-contact h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #007bff;
+  }
+
+  .direct-contact p {
+    margin-bottom: 25px;
+    font-size: 16px;
+  }
+
+  .btn {
+    display: block;
+    margin: 10px auto;
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    width: 200px;
+    transition: background 0.3s;
+  }
+
+  .btn.call {
+    background: #28a745;
+    color: white;
+  }
+
+  .btn.call:hover {
+    background: #1e7e34;
+  }
+
+  .btn.whatsapp {
+    background: #25d366;
+    color: white;
+  }
+
+  .btn.whatsapp:hover {
+    background: #1ebe57;
+  }
+
+  @media (max-width: 768px) {
+    .quote h2 {
+      font-size: 28px;
+    }
+    .quote .intro {
+      font-size: 16px;
+    }
+}
+
+    .partners {
+    padding: 80px 20px;
+    background: #f9f9f9;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  .partners .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .partners h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #333;
+  }
+
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 30px;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .logo-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .logo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
+
+  .logo-card img {
+    max-width: 120px;
+    height: auto;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .partners h2 {
+      font-size: 28px;
+    }
+    .logo-card img {
+      max-width: 100px;
+    }
+  }
+
+  /* Contact Section */
+#contact {
+  padding: 80px 20px;
+  background: #f9f9f9;
+  font-family: Arial, sans-serif;
+  color: #333;
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+#contact .contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+#contact .contact-item {
+  flex: 1 1 250px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#contact .contact-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+#contact .contact-item h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+#contact .contact-item p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Google Map */
+#contact iframe {
+  width: 100%;
+  max-width: 1000px;
+  height: 400px;
+  border: 0;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+#contact .whatsapp-btn {
+  display: inline-block;
+  background: #25d366;
+  color: white;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.3s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+#contact .whatsapp-btn:hover {
+  background: #1ebe57;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  #contact h2 {
+    font-size: 28px;
+  }
+  #contact .contact-item h3 {
+    font-size: 18px;
+  }
+  #contact .contact-item p {
+    font-size: 15px;
+  }
+  #contact iframe {
+    height: 300px;
+  }
+}
+
+.footer {
+    background: #222;
+    color: #fff;
+    padding: 60px 20px 20px 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+
+  .footer-section {
+    flex: 1 1 250px;
+  }
+
+  .footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #007bff;
+  }
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-section ul li a:hover {
+    color: #007bff;
+  }
+
+  .social-icons a {
+    font-size: 24px;
+    margin-right: 15px;
+    display: inline-block;
+    color: #fff;
+    transition: color 0.3s;
+  }
+
+  .social-icons a:hover {
+    color: #007bff;
+  }
+
+  .certifications img {
+    max-width: 80px;
+    margin-right: 15px;
+    margin-top: 10px;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #aaa;
+  }
+
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+    .certifications img {
+      margin-right: 10px;
+    }
+  }
+
+   @media (max-width: 992px) {
+      .container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none; 
+      }
+    }
+
+  .requu a{
+    text-decoration: none;
+    color: white;
+  }
+
+  .chatbut:hover {
+    
+    cursor: pointer;
+
+  }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+
+nav {
+  width: 100%;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column; 
+  gap: 15px;
+  display: none;
+}
+
+.nav-links.active {
+  display: flex;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #007bff;
+}
+
+.menu-toggle {
+  font-size: 26px;
+  cursor: pointer;
+  display: block; 
+}
+
+.hero {
+  height: 100vh;
+  background: url('thumbnails/cargoplane.webp') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 90%;
+}
+
+.hero h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.hero button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.hero button:hover {
+  background: #0056b3;
+}
+
+.about {
+  padding: 50px 20px;
+  background: #f9f9f9;
+  color: #333;
+}
+
+.about .container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.about .intro {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.about-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-details > div {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.services {
+  padding: 50px 20px;
+  background: #fff;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr; 
+}
+
+.service-card {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.service-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Quote Section */
+.quote-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.quote-form,
+.direct-contact {
+  flex: 1 1 100%;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.quote-form input,
+.quote-form textarea,
+.quote-form button {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.direct-contact .btn {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+
+.logo-grid {
+  display: grid;
+  grid-template-columns: 1fr; 
+  gap: 20px;
+  justify-items: center;
+}
+
+
+#contact .contact-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#contact iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  border-radius: 8px;
+}
+
+/* Footer */
+.footer {
+  background: #222;
+  color: #fff;
+  padding: 40px 20px 20px 20px;
+  text-align: center;
+}
+
+.footer img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .hero h1 { font-size: 36px; }
+  .hero p { font-size: 18px; }
+  .about-details { flex-direction: row; flex-wrap: wrap; }
+  .service-grid { grid-template-columns: repeat(2, 1fr); }
+  .logo-grid { grid-template-columns: repeat(2, 1fr); }
+  #contact .contact-grid { flex-direction: row; flex-wrap: wrap; }
+}
+
+
+@media (min-width: 993px) {
+  .nav-links {
+    display: flex !important;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .menu-toggle { display: none; }
+  .hero h1 { font-size: 48px; }
+  .hero p { font-size: 20px; }
+  .about-details { flex-direction: row; gap: 40px; }
+  .service-grid { grid-template-columns: repeat(3, 1fr); }
+  .logo-grid { grid-template-columns: repeat(4, 1fr); }
+  .quote-grid { flex-direction: row; gap: 40px; }
+}
+
+@media (min-width: 1200px) {
+  .hero-content { max-width: 700px; }
+  .about .container, .services .container, .quote .container, .partners .container { max-width: 1100px; }
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: auto;/* set your height */
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
+  z-index: 1;
+}
+
+.image-container .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; /* text color stays bright */
+  text-align: center;
+  z-index: 2; /* above overlay */
+}
+
+.subbut a{
+text-decoration: none;
+color: white;
+}
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="navbar">
+       <a href="index.html">
+      <img src="thumbnails/avilogo.jpg" alt="Your Logo" style="height: 70px;
+      border-radius: 40px;">
+    </a>
+      <div class="logo"></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about us">About Us</a></li>
+        <li><a href="#contact us">Contact Us</a></li>
+      </ul>
+
+      <div class="menu-toggle" id="menuToggle">☰</div>
+    </div>
+  </nav>
+
+  <section id="home" class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Delivering Cargo Across The Globe</h1>
+    <p>Your trusted partner in international shipping and logistics.</p>
+    <button class="requu"><a href="#request">Request a Quote</button></a>
+  </div>
+</section>
+
+<section id="about us" class="about">
+  
+  <div class="container">
+    <h2>About Us</h2>
+    <p class="intro">
+      For over <strong>20 years</strong>, we have been at the forefront of global shipping, 
+      delivering cargo safely and efficiently across the world.  
+      Our extensive network of <strong>international partners</strong> ensures seamless logistics 
+      and trusted delivery to every corner of the globe.
+    </p>
+
+    <div style="z-index: 2;" class="about-details">
+      <div class="story">
+        <img style="object-fit: contain;
+        width: 100%;
+        height: auto;" src="thumbnails/ourstory.webp" alt="our story">
+        <div class="overlay"></div>
+        <h3>Our Story & Experience</h3>
+        <p>
+          Founded with a vision to connect businesses worldwide, we have built a 
+          reputation on consistency, speed, and customer-first solutions.  
+          From humble beginnings, our team has grown into a leading logistics 
+          provider trusted by hundreds of global brands.
+        </p>
+      </div>
+
+      <div class="mission">
+        <img style="object-fit: contain;
+        width: 100%;
+        height: auto;" src="thumbnails/mission.jpeg" alt="our story">
+        <div class="overlay"></div>
+        <h3>Our Mission & Values</h3>
+        <ul>
+          <li><strong>Trust:</strong> We ensure transparent operations and reliable service.</li>
+          <li><strong>Reliability:</strong> Decades of proven experience in shipping.</li>
+          <li><strong>Speed:</strong> Fast and efficient delivery, every time.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="container">
+    <h2>Our Services</h2>
+    <p class="intro">
+      We provide end-to-end logistics solutions tailored to your business needs.  
+      From customs to cargo insurance, we handle it all with precision and care.
+    </p>
+
+    <div class="service-grid">
+      <div class="service-card">
+        <img style="object-fit: cover;
+        overflow: hidden;
+        height: auto;
+        width:100%;" src="thumbnails/customs clearing.jpg">
+        <h3>Customs Clearing</h3>
+        <p>
+          Fast and reliable customs clearance services to ensure smooth cargo movement across borders.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <img style="object-fit: cover;
+        overflow: hidden;
+        height: auto;
+        width: 100%" src="thumbnails/freight forwarding.webp">
+        <h3>Freight Forwarding</h3>
+        <p>
+          Comprehensive forwarding solutions by <strong>air, sea, and road</strong> for global cargo delivery.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <img style="object-fit: cover;
+        overflow: hidden;
+        height: auto;
+        width: 100%;" src="thumbnails/warehousing.jpg">
+        <h3>Warehousing & Distribution</h3>
+        <p>
+          Secure storage facilities and efficient distribution networks to keep your supply chain flowing.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <img style="object-fit: cover;
+        overflow: hidden;
+        height: auto;
+        width: 100%;" src="thumbnails/cargo insurance.jpg">
+        <h3>Cargo Insurance</h3>
+        <p>
+          Comprehensive insurance plans to protect your goods from unforeseen risks during transit.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <img style="object-fit: cover;
+        overflow: hidden;
+        height: auto;
+        width: 100%;" src="thumbnails/consultancy.jpg"></i>
+        <h3>Consultancy</h3>
+        <p>
+          Expert guidance on <strong>import/export documentation</strong> and international trade compliance.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="container">
+    <h2 id="request" >Request a Quote</h2>
+    <p class="intro">
+      Get a free shipping quote by filling out the form below or contact us directly via phone or WhatsApp.
+    </p>
+
+    <div class="quote-grid">
+      <!-- Quote Form -->
+      <form class="quote-form">
+        <label for="cargoType">Cargo Type</label>
+        <input type="text" id="cargoType" name="cargo" placeholder="e.g. Electronics, Furniture" required>
+
+        <label for="destination">Destination</label>
+        <input type="text" id="dest" name="dest" placeholder="e.g. Dar es Salaam, Dubai" required>
+
+        <label for="weight">Weight (kg)</label>
+        <input type="number" id="weight" name="weight" placeholder="Enter weight in kg" required>
+
+        <label for="volume">Volume (m³)</label>
+        <input type="text" id="volume" name="volume" placeholder="Enter cargo volume">
+
+        <label for="message">Additional Details</label>
+        <textarea id="details" name="details" rows="4" placeholder="Special instructions..."></textarea>
+
+        <button id="whatsappBtn" class="subbut" type="button">
+          <a href="https://wa.me/255788296274" target="_blank">Submit Request</a>
+          </button>
+      </form>
+
+      <div class="direct-contact">
+        <h3 id="contact us"  >Contact Us Directly</h3>
+        <p>Need quick assistance? Reach us instantly.</p>
+        <a href="tel:+255788296274" class="btn call"> Call Us</a>
+        <a href="https://wa.me/255788296274" target="_blank" class="btn whatsapp">WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="partners">
+  <div class="container">
+    <h2>Our Clients & Partners</h2>
+    <div class="logo-grid">
+      <div  class="logo-card">
+        <img src="thumbnails/metl.png" alt="Mohammed Enterprises Tanzania Limited logo">
+      </div>
+      <div class="logo-card">
+        <img src="thumbnails/gsm logo.png" alt="GSM Tanzania logo">
+      </div>
+      <div class="logo-card">
+        <img src="thumbnails/simba.png" alt="Simba Sports Club logo">
+      </div>
+      <div class="logo-card">
+        <img src="thumbnails/yanga.png" alt="Young Africans Sports Club logo">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="py-16 bg-gray-100">
+  <div class="container mx-auto px-6 md:px-12 text-center">
+    <h2 class="text-3xl font-bold mb-8">Contact Us</h2>
+    
+    <div class="grid md:grid-cols-3 gap-8 mb-12">
+      <div style="margin-bottom: 30px;">
+        <h3 class="text-xl font-semibold mb-2">Phone</h3>
+        <p class="text-gray-700">+255 788 296 274</p>
+      </div>
+      <div style="margin-bottom: 30px;">
+        <h3 class="text-xl font-semibold mb-2">Email</h3>
+        <p class="text-gray-700">avioceancl@gmail.com</p>
+      </div>
+      <div style="margin-bottom: 30px;">
+        <h3 class="text-xl font-semibold mb-2">Office Address</h3>
+        <p class="text-gray-700">123 Lumumba Street, Dar es Salaam, Tanzania</p>
+      </div>
+    </div>
+    
+    <div class="mb-12">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d898.8456406605592!2d39.2786445831614!3d-6.819168037276433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4b07f3d90431%3A0x710f267058c774f2!2sLumumba%20St%2C%20Dar%20es%20Salaam!5e1!3m2!1sen!2stz!4v1756598548310!5m2!1sen!2stz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        width="100%" 
+        height="400" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <div>
+      <a style="text-decoration: none;" href="https://wa.me/255788296274" target="_blank" 
+         class="inline-block bg-green-500 text-white px-6 py-3 rounded-full shadow-lg hover:bg-green-600 transition">
+       <button style="color: white;
+       background-color: blue;
+       padding: 20px;
+       border: none;
+       border-radius: 20px;" class="chatbut">Chat With Us</button> 
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <img style="height: auto;
+  width: 100%;
+  display: block;
+  margin: auto;
+  object-fit: contain;" src="thumbnails/cert1.jpg">
+  <img style="height: auto;
+  width: 100%;
+  display: block;
+  margin: auto;
+  object-fit: contain;
+  margin-top: 20px;" src="thumbnails/cert2.jpg">
+   <p style="margin-top: 30px;">© 2025 AVIOCEAN COMPANY LIMITED. All rights reserved.</p>
+</footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    window.addEventListener('resize', () => {
+  if(window.innerWidth > 768) {
+    navLinks.classList.remove('active');
+  }
+});
+
+const navItems = navLinks.querySelectorAll("a");
+
+navItems.forEach(link => {
+  link.addEventListener("click", () => {
+    
+    if (window.innerWidth <= 768) {
+      navLinks.classList.remove("active");    
+      menuToggle.classList.remove("active");   
+    }
+  });
+});
+
+document.getElementById('whatsappBtn').addEventListener('click', () => {
+  const cargo = encodeURIComponent(document.getElementById('cargoType').value);
+  const dest = encodeURIComponent(document.getElementById('dest').value);
+  const weight = encodeURIComponent(document.getElementById('weight').value);
+  const volume = encodeURIComponent(document.getElementById('volume').value);
+  const details = encodeURIComponent(document.getElementById('details').value);
+
+  const message = `Hello, I want to request a shipping quote.%0ACargo Type: ${cargo}%0ADestination: ${dest}%0AWeight: ${weight}%0AAdditional Details: ${details}`;
+
+  const url = `https://wa.me/255788296274?text=${message}`;
+  window.open(url, '_blank');
+});
+
+    
+
+  </script>
+</body>
+</html>
