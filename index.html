@@ -1,698 +1,966 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TanLogistics</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+<title>PrimeLogix Logistics</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="icon" class="rounded-full" href="assets/weblogo.png" type="image/x-icon">
+ <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+font-family: 'Inter', sans-serif;
+}
+
+.fade-up{
+opacity:0;
+transform:translateY(40px);
+transition:all .8s ease;
+}
+
+.fade-up.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.hero-overlay{
+background:linear-gradient(
+to right,
+rgba(2,6,23,.85),
+rgba(2,6,23,.6),
+rgba(2,6,23,.3)
+);
+}
+
+</style>
+
 </head>
-
-<body style="font-family: poppins;" class="bg-slate-950 text-white">
-
-  <!-- NAVBAR -->
-  <nav class="border-b border-slate-800">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="flex items-center justify-between h-16">
-
-        <!-- LOGO -->
-        <div class="text-xl font-semibold tracking-wide">
-          TAN<span class="text-emerald-400">LOGISTICS</span>
-        </div>
-
-        <!-- DESKTOP MENU -->
-        <div class="hidden md:flex space-x-8 text-slate-300">
-          <a href="#" class="hover:text-white transition">Home</a>
-          <a href="#" class="hover:text-white transition">Services</a>
-          <a href="#" class="hover:text-white transition">About</a>
-          <a href="#" class="hover:text-white transition">Contact</a>
-        </div>
-
-        <!-- HAMBURGER BUTTON -->
-        <button id="menu-btn" class="md:hidden flex flex-col gap-1.5">
-          <span class="line line1 block w-6 h-0.5 bg-white transition-all"></span>
-          <span class="line line2 block w-6 h-0.5 bg-white transition-all"></span>
-          <span class="line line3 block w-6 h-0.5 bg-white transition-all"></span>
-        </button>
-
-      </div>
-    </div>
-
-    <!-- MOBILE MENU -->
-    <div id="mobile-menu" class="md:hidden hidden bg-slate-900 border-t border-slate-800">
-      <div class="px-6 py-4 space-y-4 text-slate-300">
-        <a href="#" class="block hover:text-white">Home</a>
-        <a href="#" class="block hover:text-white">Services</a>
-        <a href="#" class="block hover:text-white">About</a>
-        <a href="#" class="block hover:text-white">Contact</a>
-      </div>
-    </div>
-  </nav>
+<body class="bg-gray-50">
 
 
-  <!-- HERO SECTION -->
-<section class="bg-slate-950">
-  <div class="max-w-7xl mx-auto px-6 py-20 lg:py-28 grid lg:grid-cols-2 gap-12 items-center">
+<!-- NAVBAR -->
 
-    <!-- LEFT CONTENT -->
-    <div>
-      <!-- SEO H1 -->
-      <h1 class="text-4xl lg:text-5xl font-semibold leading-tight text-white">
-        Customs Clearing & Freight Forwarding
-        <span class="text-emerald-400">in Tanzania</span>
+<nav class="fixed w-full z-50 backdrop-blur bg-white border-b">
+
+<!-- PRIME NAV HUB -->
+<nav class="fixed w-full z-50 bg-white backdrop-blur-md border-b border-slate-100 py-4 transition-all duration-300">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6">
+
+    <!-- Logo with scale effect -->
+    <a href="/" class="group transition-transform duration-300 hover:scale-105">
+      <img src="assets/image_b7bb81d8.png" alt="PrimeLogix" class="h-14 md:h-16 object-contain">
+    </a>
+
+    <!-- Desktop Menu: Industrial Typography -->
+    <ul class="hidden md:flex gap-12 font-black text-xs uppercase tracking-[0.2em] text-[#1D4189]">
+      <li class="relative group cursor-pointer hover:text-[#F05A28] transition-colors">
+        Home
+        <span class="absolute -bottom-2 left-0 w-0 h-1 bg-[#F05A28] transition-all duration-300 group-hover:w-full"></span>
+      </li>
+      <li class="relative group cursor-pointer hover:text-[#F05A28] transition-colors">
+        Services
+        <span class="absolute -bottom-2 left-0 w-0 h-1 bg-[#F05A28] transition-all duration-300 group-hover:w-full"></span>
+      </li>
+      <li class="relative group cursor-pointer hover:text-[#F05A28] transition-colors">
+        Company
+        <span class="absolute -bottom-2 left-0 w-0 h-1 bg-[#F05A28] transition-all duration-300 group-hover:w-full"></span>
+      </li>
+      <li class="relative group cursor-pointer hover:text-[#F05A28] transition-colors">
+        Contact
+        <span class="absolute -bottom-2 left-0 w-0 h-1 bg-[#F05A28] transition-all duration-300 group-hover:w-full"></span>
+      </li>
+    </ul>
+
+    <!-- High-Conversion CTA Button -->
+    <button class="hidden md:block bg-[#F05A28] hover:bg-[#d84a1e] text-white px-8 py-3.5 rounded-full font-black uppercase tracking-widest text-[10px] shadow-xl shadow-orange-600/20 transition-all transform hover:-translate-y-1 active:scale-95">
+      Get Quote
+    </button>
+
+    <!-- Triple-Bar Hamburger for Mobile -->
+    <button id="menuBtn" class="md:hidden flex flex-col gap-1.5 focus:outline-none group">
+      <span class="w-8 h-1 bg-[#1D4189] rounded-full transition-all group-hover:bg-[#F05A28]"></span>
+      <span class="w-8 h-1 bg-[#1D4189] rounded-full transition-all group-hover:bg-[#F05A28]"></span>
+      <span class="w-8 h-1 bg-[#1D4189] rounded-full transition-all group-hover:bg-[#F05A28]"></span>
+    </button>
+
+  </div>
+</nav>
+
+
+
+<!-- hamburger -->
+
+<button id="menuBtn" class="md:hidden text-orange-500 text-3xl">
+
+☰
+
+</button>
+
+
+</div>
+
+
+<!-- mobile menu -->
+
+<div id="mobileMenu"
+class="hidden md:hidden bg-white border-t">
+
+<ul class="flex flex-col p-4 gap-4 font-semibold">
+
+<li>Home</li>
+<li>Services</li>
+<li>Company</li>
+<li>Contact</li>
+
+<button class="bg-orange-500 text-white px-4 py-2 rounded">
+Get Quote
+</button>
+
+</ul>
+
+</div>
+
+</nav>
+
+<!-- HERO SECTION -->
+<!-- Using the exact Navy Blue from your logo for the overlay to build brand trust -->
+<section class="h-screen relative flex items-center bg-[url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d')] bg-cover bg-center overflow-hidden">
+
+  <!-- Brand-aligned gradient overlay (Navy to Transparent) -->
+  <div class="absolute inset-0 bg-gradient-to-r from-[#1D4189]/90 via-[#1D4189]/60 to-transparent"></div>
+  
+  <!-- Subtle decorative "Arrow" element mimicking the logo's upward motion -->
+  <div class="absolute bottom-0 right-0 w-1/2 h-full bg-[#F05A28]/10 skew-x-[-20deg] translate-x-32 pointer-events-none"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 w-full z-10">
+
+    <div class="max-w-3xl text-white fade-up">
+
+      <!-- Eyebrow text matching the logo's tagline font style -->
+      <p class="uppercase tracking-[0.3em] text-[#F05A28]  mt-20 font-black text-sm">
+        Global Logistics Solutions
+      </p>
+
+      <!-- Main Headline: Using 'font-black' and 'tracking-tighter' to match the "PRIME" logotype -->
+      <h1 class="text-5xl md:text-7xl font-black mb-8 leading-[1.1] tracking-tighter uppercase">
+        Logistics Solutions <br> 
+        <span class="text-white/90">Built For </span>
+        <span class="text-[#F05A28]">Serious Business</span>
       </h1>
 
-      <!-- SUBTEXT -->
-      <p class="mt-6 text-slate-400 max-w-xl text-lg">
-        We handle air, sea, and road freight with fast customs clearance,
-        compliant documentation, and reliable cargo delivery across Tanzania
-        and East Africa.
+      <p class="text-lg md:text-xl text-blue-100/80 mb-10 max-w-xl leading-relaxed font-medium">
+        Reliable, fast, and secure transport services worldwide. Partner with <strong>PrimeLogix</strong> for seamless global delivery.
       </p>
 
-      <!-- CTA BUTTONS -->
-      <div class="mt-8 flex flex-wrap gap-4">
-        <a href="#contact"
-           class="px-6 py-3 rounded-lg bg-emerald-500 text-slate-900 font-medium hover:bg-emerald-400 transition">
-          Request a Quote
-        </a>
+      <div class="flex flex-col sm:flex-row gap-5">
+        <!-- Primary Button: Using Logo Orange -->
+        <button class="bg-[#F05A28] hover:bg-[#d84a1e] text-white px-10 py-5 rounded-full font-black uppercase tracking-widest shadow-2xl shadow-orange-600/30 transition-all transform hover:-translate-y-1 active:scale-95">
+          Request Quote
+        </button>
 
-        <a href="https://wa.me/255000000000"
-           class="px-6 py-3 rounded-lg border border-slate-700 text-white hover:border-emerald-400 transition">
-          Call / WhatsApp
-        </a>
-      </div>
-
-      <!-- TRUST BADGES -->
-      <div class="mt-10 flex flex-wrap items-center gap-6 text-sm text-slate-400">
-        <span class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-          TRA Compliant
-        </span>
-
-        <span class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-          TPA Port Experience
-        </span>
-
-        <span class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-          Reliable Cargo Handling
-        </span>
+        <!-- Secondary Button: Modern transparent style -->
+        <button class="backdrop-blur-md bg-white/10 border-2 border-white/20 hover:bg-white hover:text-[#1D4189] px-10 py-5 rounded-full font-black uppercase tracking-widest transition-all shadow-xl">
+          Our Services
+        </button>
       </div>
     </div>
-
-    <!-- RIGHT VISUAL (OPTIONAL, CLEAN) -->
-   <div class="hidden lg:block">
-  <img 
-    src="thumbnails/tanlog.png" 
-    alt="Port, Cargo, Freight" 
-    class="h-[420px] w-full object-cover rounded-2xl border border-slate-800"
-  />
-</div>
-
-
   </div>
 </section>
 
-<!-- SERVICES SECTION -->
-<section class="bg-slate-900 py-24">
-  <div class="max-w-7xl mx-auto px-6">
 
-    <!-- SECTION HEADER -->
-    <div class="max-w-2xl mb-14">
-      <h2 class="text-3xl font-semibold text-white">
-        Our Logistics Services
+
+<!-- REFINED SERVICES SECTION -->
+<section class="py-32 bg-slate-50 relative overflow-hidden">
+  <!-- Subtle globe grid background pattern mimicking the logo icon -->
+  <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#1D4189 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+    <!-- Header: High-impact typography matching "PRIME" logo weight -->
+    <div class="text-center mb-24 fade-up">
+      <h2 class="text-4xl md:text-6xl font-black text-[#1D4189] mb-6 tracking-tighter uppercase">
+        Logistics Services Built for <span class="text-[#F05A28]">Business</span>
       </h2>
-      <p class="mt-4 text-slate-400">
-        End-to-end clearing and freight forwarding solutions designed
-        to move cargo efficiently, compliantly, and on time.
+      <div class="w-24 h-1.5 bg-[#F05A28] mx-auto mb-8 rounded-full"></div>
+      <p class="text-slate-500 max-w-2xl mx-auto text-lg leading-relaxed font-medium">
+        Reliable transport, shipping, and supply chain solutions for companies that need serious logistics partners.
       </p>
     </div>
 
-    <!-- SERVICES GRID -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Cards Grid: Updated to 3 columns, adding a 6th card for balance -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-      <!-- SERVICE CARD -->
-      <div class="p-6 rounded-xl bg-slate-950 border border-slate-800">
-        <h3 class="text-lg font-semibold text-white mb-2">
-          Customs Clearing (Imports & Exports)
-        </h3>
-        <p class="text-sm text-slate-400">
-          Professional customs clearance with full TRA compliance.
-        </p>
+      <!-- Freight Card -->
+      <div class="group bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-[#F05A28]/10 transition-all duration-500 overflow-hidden flex flex-col">
+        <div class="h-56 w-full bg-slate-200 overflow-hidden relative">
+          <div class="absolute inset-0 bg-[#1D4189]/0 group-hover:bg-[#1D4189]/10 transition-colors duration-500"></div>
+          <img src="assets/freight transport.webp" alt="Freight Transport" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+        </div>
+        <div class="p-10 flex-grow">
+          <h3 class="font-black text-xl mb-4 text-[#1D4189] group-hover:text-[#F05A28] transition-colors uppercase tracking-tight">Freight Transport</h3>
+          <p class="text-slate-500 leading-relaxed text-sm mb-6">Secure and fast cargo transport worldwide with industry-leading safety protocols.</p>
+          <span class="text-[#F05A28] font-bold text-xs uppercase tracking-widest flex items-center group-hover:translate-x-2 transition-all">Details <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg></span>
+        </div>
       </div>
 
-      <div class="p-6 rounded-xl bg-slate-950 border border-slate-800">
-        <h3 class="text-lg font-semibold text-white mb-2">
-          Freight Forwarding (Air, Sea & Road)
-        </h3>
-        <p class="text-sm text-slate-400">
-          Coordinated freight movement from origin to destination.
-        </p>
+      <!-- Shipping Card -->
+      <div class="group bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-[#F05A28]/10 transition-all duration-500 overflow-hidden flex flex-col">
+        <div class="h-56 w-full bg-slate-200 overflow-hidden relative">
+          <img src="assets/shipping.webp" alt="Shipping" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+        </div>
+        <div class="p-10 flex-grow">
+          <h3 class="font-black text-xl mb-4 text-[#1D4189] group-hover:text-[#F05A28] transition-colors uppercase tracking-tight">Shipping</h3>
+          <p class="text-slate-500 leading-relaxed text-sm mb-6">International sea and air shipping services designed for speed and reliability.</p>
+          <span class="text-[#F05A28] font-bold text-xs uppercase tracking-widest flex items-center group-hover:translate-x-2 transition-all">Details <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg></span>
+        </div>
       </div>
 
-      <div class="p-6 rounded-xl bg-slate-950 border border-slate-800">
-        <h3 class="text-lg font-semibold text-white mb-2">
-          Port & Terminal Handling
-        </h3>
-        <p class="text-sm text-slate-400">
-          Efficient cargo handling at ports and inland terminals.
-        </p>
+      <!-- Warehousing Card -->
+      <div class="group bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-[#F05A28]/10 transition-all duration-500 overflow-hidden flex flex-col">
+        <div class="h-56 w-full bg-slate-200 overflow-hidden relative">
+          <img src="assets/warehousing.jpg" alt="Warehousing" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+        </div>
+        <div class="p-10 flex-grow">
+          <h3 class="font-black text-xl mb-4 text-[#1D4189] group-hover:text-[#F05A28] transition-colors uppercase tracking-tight">Warehousing</h3>
+          <p class="text-slate-500 leading-relaxed text-sm mb-6">Modern storage facilities with high-tier security and real-time inventory tracking.</p>
+          <span class="text-[#F05A28] font-bold text-xs uppercase tracking-widest flex items-center group-hover:translate-x-2 transition-all">Details <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg></span>
+        </div>
       </div>
 
-      <div class="p-6 rounded-xl bg-slate-950 border border-slate-800">
-        <h3 class="text-lg font-semibold text-white mb-2">
-          Warehousing & Storage
-        </h3>
-        <p class="text-sm text-slate-400">
-          Secure short-term and long-term cargo storage solutions.
-        </p>
+      <!-- Delivery Card -->
+      <div class="group bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-[#F05A28]/10 transition-all duration-500 overflow-hidden flex flex-col">
+        <div class="h-56 w-full bg-slate-200 overflow-hidden relative">
+          <img src="assets/delivery.jpg" alt="Delivery" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+        </div>
+        <div class="p-10 flex-grow">
+          <h3 class="font-black text-xl mb-4 text-[#1D4189] group-hover:text-[#F05A28] transition-colors uppercase tracking-tight">Final Delivery</h3>
+          <p class="text-slate-500 leading-relaxed text-sm mb-6">Last-mile solutions ensuring on-time delivery for every shipment, every time.</p>
+          <span class="text-[#F05A28] font-bold text-xs uppercase tracking-widest flex items-center group-hover:translate-x-2 transition-all">Details <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg></span>
+        </div>
       </div>
 
-      <div class="p-6 rounded-xl bg-slate-950 border border-slate-800">
-        <h3 class="text-lg font-semibold text-white mb-2">
-          Door-to-Door Delivery
-        </h3>
-        <p class="text-sm text-slate-400">
-          Complete logistics from port to final destination.
-        </p>
+      <!-- Supply Chain Card -->
+      <div class="group bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-[#F05A28]/10 transition-all duration-500 overflow-hidden flex flex-col">
+        <div class="h-56 w-full bg-slate-200 overflow-hidden relative">
+          <img src="assets/supply chain.png" alt="Supply Chain" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+        </div>
+        <div class="p-10 flex-grow">
+          <h3 class="font-black text-xl mb-4 text-[#1D4189] group-hover:text-[#F05A28] transition-colors uppercase tracking-tight">Supply Chain</h3>
+          <p class="text-slate-500 leading-relaxed text-sm mb-6">Complete end-to-end logistics and supply chain management for scaling businesses.</p>
+          <span class="text-[#F05A28] font-bold text-xs uppercase tracking-widest flex items-center group-hover:translate-x-2 transition-all">Details <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg></span>
+        </div>
       </div>
 
-      <div class="p-6 rounded-xl bg-slate-950 border border-slate-800">
-        <h3 class="text-lg font-semibold text-white mb-2">
-          Transit Goods Handling
-        </h3>
-        <p class="text-sm text-slate-400">
-          Reliable handling of transit cargo across borders.
-        </p>
+      <!-- 6th Card: Custom Solutions (To balance the grid) -->
+      <div class="group bg-[#1D4189] rounded-3xl p-10 flex flex-col justify-center items-center text-center shadow-lg transition-all duration-500 hover:shadow-2xl hover:shadow-[#F05A28]/20">
+        <div class="w-20 h-20 bg-[#F05A28] rounded-2xl flex items-center justify-center text-white text-3xl mb-8 group-hover:rotate-6 transition-transform">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+        </div>
+        <h3 class="font-black text-2xl text-white uppercase tracking-tight mb-4">Custom Solutions</h3>
+        <p class="text-blue-100/70 text-sm mb-8">Need something specific? We build tailor-made logistics frameworks for unique enterprise needs.</p>
+        <a href="#contact" class="text-white font-black text-xs uppercase tracking-widest border-b-2 border-[#F05A28] pb-1 hover:text-[#F05A28] transition-colors">Start a Project</a>
       </div>
 
     </div>
+
+    <!-- CTA Button: Precise Orange Match -->
+    <div class="text-center mt-24">
+      <a href="services.html" class="inline-flex items-center bg-[#F05A28] hover:bg-[#1D4189] text-white font-black px-12 py-5 rounded-full shadow-2xl shadow-orange-500/20 transition-all transform hover:-translate-y-1 uppercase tracking-wider">
+        Full Service Portfolio
+        <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+      </a>
+    </div>
+
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="bg-slate-950 py-24">
-  <div class="max-w-7xl mx-auto px-6">
-
-    <!-- SECTION HEADER -->
-    <div class="max-w-2xl mb-16">
-      <h2 class="text-3xl font-semibold text-white">
-        How Our Logistics Process Works
-      </h2>
-      <p class="mt-4 text-slate-400">
-        A clear, structured process designed to ensure fast clearance,
-        secure handling, and reliable delivery of your cargo.
-      </p>
-    </div>
-
-    <!-- PROCESS STEPS -->
-    <div class="grid md:grid-cols-3 gap-12">
-
-      <!-- STEP 1 -->
-      <div>
-        <div class="text-emerald-400 font-semibold text-sm tracking-wide">
-          STEP 01
-        </div>
-        <h3 class="mt-3 text-lg font-semibold text-white">
-          Send Documents / Request Quote
-        </h3>
-        <p class="mt-2 text-sm text-slate-400">
-          Share shipment details and clearance documents for quick assessment
-          and pricing.
-        </p>
-      </div>
-
-      <!-- STEP 2 -->
-      <div>
-        <div class="text-emerald-400 font-semibold text-sm tracking-wide">
-          STEP 02
-        </div>
-        <h3 class="mt-3 text-lg font-semibold text-white">
-          Cargo Clearance & Handling
-        </h3>
-        <p class="mt-2 text-sm text-slate-400">
-          We manage customs clearance, port handling, and freight coordination.
-        </p>
-      </div>
-
-      <!-- STEP 3 -->
-      <div>
-        <div class="text-emerald-400 font-semibold text-sm tracking-wide">
-          STEP 03
-        </div>
-        <h3 class="mt-3 text-lg font-semibold text-white">
-          Delivery to Destination
-        </h3>
-        <p class="mt-2 text-sm text-slate-400">
-          Cargo is delivered safely to the final destination on time.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- WHY CHOOSE US -->
-<section class="bg-slate-900 py-24">
-  <div class="max-w-7xl mx-auto px-6">
 
-    <!-- SECTION HEADER -->
-    <div class="max-w-2xl mb-16">
-      <h2 class="text-3xl font-semibold text-white">
-        Why Choose Our Logistics Services
+<!-- Main section uses the exact Navy Blue from your logo -->
+<section class="py-28 bg-[#1D4189] text-white overflow-hidden relative">
+  <!-- Subtle decorative background element to mimic the logo's arrow/swoosh -->
+  <div class="absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-[-20deg] translate-x-20 pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+    <!-- Heading: Highlighting "PrimeLogix" in brand orange -->
+    <div class="text-center mb-20 fade-up">
+      <h2 class="text-4xl md:text-6xl font-black mb-6 tracking-tighter uppercase">
+        Why Companies Choose <span class="text-[#F05A28]">PrimeLogix</span>
       </h2>
-      <p class="mt-4 text-slate-400">
-        Proven expertise, transparency, and local knowledge that ensures
-        smooth cargo clearance and delivery.
+      <p class="text-blue-100/80 max-w-2xl mx-auto text-lg leading-relaxed">
+        We provide professional logistics solutions trusted by businesses that require speed, reliability, and secure transport worldwide.
       </p>
     </div>
 
-    <!-- TRUST POINTS GRID -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-
-      <!-- TRUST POINT 1 -->
-      <div class="p-6 rounded-xl bg-slate-950 border border-slate-800">
-        <h3 class="text-lg font-semibold text-white mb-2">Fast Clearance</h3>
-        <p class="text-sm text-slate-400">
-          Efficient TRA-compliant customs processing for imports and exports.
+    <!-- Grid: Improved card depth and hover interaction -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <!-- Feature Card Template -->
+      <div class="group bg-white/10 backdrop-blur-md border border-white/10 rounded-3xl p-8 text-center hover:bg-white hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 fade-up cursor-default">
+        <!-- Icon: Changes from Orange to Blue on card hover -->
+        <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center rounded-2xl bg-[#F05A28] text-3xl group-hover:bg-[#1D4189] transition-colors duration-500 shadow-lg shadow-black/20">
+          ⚡
+        </div>
+        <h3 class="font-bold text-xl mb-3 group-hover:text-[#1D4189] transition-colors">Fast Delivery</h3>
+        <p class="text-blue-100/70 group-hover:text-gray-600 text-sm leading-relaxed transition-colors">
+          On-time transport for local and international shipments with real-time tracking.
         </p>
       </div>
 
-      <!-- TRUST POINT 2 -->
-      <div class="p-6 rounded-xl bg-slate-950 border border-slate-800">
-        <h3 class="text-lg font-semibold text-white mb-2">Transparent Pricing</h3>
-        <p class="text-sm text-slate-400">
-          Clear quotes with no hidden fees — you know what you pay upfront.
+      <!-- Global Network -->
+      <div class="group bg-white/10 backdrop-blur-md border border-white/10 rounded-3xl p-8 text-center hover:bg-white hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 fade-up cursor-default">
+        <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center rounded-2xl bg-[#F05A28] text-3xl group-hover:bg-[#1D4189] transition-colors duration-500 shadow-lg shadow-black/20">
+          🌍
+        </div>
+        <h3 class="font-bold text-xl mb-3 group-hover:text-[#1D4189] transition-colors">Global Network</h3>
+        <p class="text-blue-100/70 group-hover:text-gray-600 text-sm leading-relaxed transition-colors">
+          Strategic hubs worldwide ensuring seamless transitions across all borders.
         </p>
       </div>
 
-      <!-- TRUST POINT 3 -->
-      <div class="p-6 rounded-xl bg-slate-950 border border-slate-800">
-        <h3 class="text-lg font-semibold text-white mb-2">Real-Time Updates</h3>
-        <p class="text-sm text-slate-400">
-          Stay informed with live cargo tracking and progress reports.
+      <!-- Secure Handling -->
+      <div class="group bg-white/10 backdrop-blur-md border border-white/10 rounded-3xl p-8 text-center hover:bg-white hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 fade-up cursor-default">
+        <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center rounded-2xl bg-[#F05A28] text-3xl group-hover:bg-[#1D4189] transition-colors duration-500 shadow-lg shadow-black/20">
+          🔒
+        </div>
+        <h3 class="font-bold text-xl mb-3 group-hover:text-[#1D4189] transition-colors">Secure Handling</h3>
+        <p class="text-blue-100/70 group-hover:text-gray-600 text-sm leading-relaxed transition-colors">
+          Industry-leading safety protocols to protect your cargo at every stage.
         </p>
       </div>
 
-      <!-- TRUST POINT 4 -->
-      <div class="p-6 rounded-xl bg-slate-950 border border-slate-800">
-        <h3 class="text-lg font-semibold text-white mb-2">Local Port Expertise</h3>
-        <p class="text-sm text-slate-400">
-          Deep knowledge of Dar es Salaam, Tanga, and regional port operations.
+      <!-- 24/7 Support -->
+      <div class="group bg-white/10 backdrop-blur-md border border-white/10 rounded-3xl p-8 text-center hover:bg-white hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 fade-up cursor-default">
+        <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center rounded-2xl bg-[#F05A28] text-3xl group-hover:bg-[#1D4189] transition-colors duration-500 shadow-lg shadow-black/20">
+          📞
+        </div>
+        <h3 class="font-bold text-xl mb-3 group-hover:text-[#1D4189] transition-colors">24/7 Support</h3>
+        <p class="text-blue-100/70 group-hover:text-gray-600 text-sm leading-relaxed transition-colors">
+          Dedicated logistics experts available around the clock for your peace of mind.
         </p>
+      </div>
+
+    </div>
+
+    <!-- CTA Button: Using the specific Orange hex -->
+    <div class="text-center mt-20 fade-up">
+      <a href="why-choose-us.html" class="inline-flex items-center bg-[#F05A28] hover:bg-[#d84a1e] text-white font-black px-12 py-5 rounded-full shadow-xl shadow-black/20 transition-all transform hover:-translate-y-1 active:scale-95 uppercase tracking-wider">
+        Learn More About Us
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- Achievements Section -->
+<section class="py-32 bg-slate-50 relative overflow-hidden">
+  <!-- Subtle background pattern mimicking the logo's globe grid -->
+  <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#1D4189 1px, transparent 1px); background-size: 30px 30px;"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+    <!-- Heading: Using the Bold, All-Caps style of the logo -->
+    <div class="text-center mb-20 fade-up">
+      <h2 class="text-4xl md:text-6xl font-black text-[#1D4189] mb-6 tracking-tighter uppercase">
+        Our <span class="text-[#F05A28]">Impact</span> In Motion
+      </h2>
+      <div class="w-24 h-1.5 bg-[#F05A28] mx-auto mb-8 rounded-full"></div> <!-- Accent line -->
+      <p class="text-slate-500 max-w-2xl mx-auto text-lg leading-relaxed">
+        Trusted by global clients for secure, fast, and reliable logistics. Here is the scale of the <strong>PrimeLogix</strong> network.
+      </p>
+    </div>
+
+    <!-- Stats Grid: Modern "Floating" Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+      
+      <!-- Stat Card Template -->
+      <div class="group fade-up bg-white rounded-3xl p-10 shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 text-center">
+        <div class="text-5xl font-black text-[#1D4189] mb-3 tracking-tighter group-hover:text-[#F05A28] transition-colors">
+          500<span class="text-[#F05A28] group-hover:text-[#1D4189]">+</span>
+        </div>
+        <p class="text-slate-400 uppercase tracking-widest text-xs font-bold">Clients Served</p>
+      </div>
+
+      <!-- Shipments -->
+      <div class="group fade-up bg-white rounded-3xl p-10 shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 text-center">
+        <div class="text-5xl font-black text-[#1D4189] mb-3 tracking-tighter group-hover:text-[#F05A28] transition-colors">
+          1.2k<span class="text-[#F05A28] group-hover:text-[#1D4189]">+</span>
+        </div>
+        <p class="text-slate-400 uppercase tracking-widest text-xs font-bold">Shipments Completed</p>
+      </div>
+
+      <!-- Countries -->
+      <div class="group fade-up bg-white rounded-3xl p-10 shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 text-center">
+        <div class="text-5xl font-black text-[#1D4189] mb-3 tracking-tighter group-hover:text-[#F05A28] transition-colors">
+          50<span class="text-[#F05A28] group-hover:text-[#1D4189]">+</span>
+        </div>
+        <p class="text-slate-400 uppercase tracking-widest text-xs font-bold">Countries Covered</p>
+      </div>
+
+      <!-- Support -->
+      <div class="group fade-up bg-white rounded-3xl p-10 shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 text-center">
+        <div class="text-5xl font-black text-[#1D4189] mb-3 tracking-tighter group-hover:text-[#F05A28] transition-colors">
+          24/7
+        </div>
+        <p class="text-slate-400 uppercase tracking-widest text-xs font-bold">Global Support</p>
+      </div>
+      
+    </div>
+
+    <!-- CTA Button: Consistent with previous sections -->
+    <div class="text-center fade-up">
+      <a href="case-study.html" class="inline-flex items-center bg-[#F05A28] hover:bg-[#1D4189] text-white font-black px-12 py-5 rounded-full shadow-lg shadow-orange-500/20 transition-all transform hover:scale-105 uppercase tracking-wide">
+        View Detailed Achievements
+        <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- PROCESS / HOW WE WORK -->
+
+<section class="py-32 bg-white relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+    <!-- Heading: High-contrast brand colors -->
+    <div class="text-center mb-24 fade-up">
+      <h2 class="text-4xl md:text-6xl font-black text-[#1D4189] mb-6 tracking-tighter uppercase">
+        The <span class="text-[#F05A28]">Prime</span> Process
+      </h2>
+      <p class="text-slate-500 max-w-2xl mx-auto text-lg leading-relaxed">
+        A streamlined workflow to ensure fast, secure, and reliable logistics for every shipment.
+      </p>
+    </div>
+
+    <!-- Process Steps with connecting "flow" lines -->
+    <div class="grid md:grid-cols-4 gap-12 text-center relative">
+      
+      <!-- Connecting Line (Desktop Only) -->
+      <div class="hidden md:block absolute top-10 left-0 w-full h-0.5 bg-slate-100 -z-10"></div>
+
+      <!-- Step 1: Request -->
+      <div class="group fade-up">
+        <div class="w-20 h-20 flex items-center justify-center mx-auto rounded-2xl bg-[#1D4189] text-white text-3xl mb-6 shadow-xl group-hover:bg-[#F05A28] group-hover:-translate-y-2 transition-all duration-500">
+          <span class="font-black text-sm absolute -top-2 -right-2 bg-[#F05A28] w-8 h-8 rounded-full flex items-center justify-center border-4 border-white">01</span>
+          📝
+        </div>
+        <h3 class="font-bold text-xl mb-3 text-[#1D4189]">Request Quote</h3>
+        <p class="text-slate-500 text-sm leading-relaxed px-4">Submit your shipment details for a personalized plan.</p>
+      </div>
+
+      <!-- Step 2: Planning -->
+      <div class="group fade-up">
+        <div class="w-20 h-20 flex items-center justify-center mx-auto rounded-2xl bg-[#1D4189] text-white text-3xl mb-6 shadow-xl group-hover:bg-[#F05A28] group-hover:-translate-y-2 transition-all duration-500">
+          <span class="font-black text-sm absolute -top-2 -right-2 bg-[#F05A28] w-8 h-8 rounded-full flex items-center justify-center border-4 border-white">02</span>
+          📊
+        </div>
+        <h3 class="font-bold text-xl mb-3 text-[#1D4189]">Smart Planning</h3>
+        <p class="text-slate-500 text-sm leading-relaxed px-4">We design the most efficient supply chain solution.</p>
+      </div>
+
+      <!-- Step 3: Transport -->
+      <div class="group fade-up">
+        <div class="w-20 h-20 flex items-center justify-center mx-auto rounded-2xl bg-[#1D4189] text-white text-3xl mb-6 shadow-xl group-hover:bg-[#F05A28] group-hover:-translate-y-2 transition-all duration-500">
+          <span class="font-black text-sm absolute -top-2 -right-2 bg-[#F05A28] w-8 h-8 rounded-full flex items-center justify-center border-4 border-white">03</span>
+          🚚
+        </div>
+        <h3 class="font-bold text-xl mb-3 text-[#1D4189]">Secure Transport</h3>
+        <p class="text-slate-500 text-sm leading-relaxed px-4">Cargo is handled and tracked with industry-leading safety.</p>
+      </div>
+
+      <!-- Step 4: Delivery -->
+      <div class="group fade-up">
+        <div class="w-20 h-20 flex items-center justify-center mx-auto rounded-2xl bg-[#F05A28] text-white text-3xl mb-6 shadow-xl group-hover:bg-[#1D4189] group-hover:-translate-y-2 transition-all duration-500">
+          <span class="font-black text-sm absolute -top-2 -right-2 bg-[#1D4189] w-8 h-8 rounded-full flex items-center justify-center border-4 border-white">04</span>
+          📦
+        </div>
+        <h3 class="font-bold text-xl mb-3 text-[#1D4189]">Final Delivery</h3>
+        <p class="text-slate-500 text-sm leading-relaxed px-4">On-time arrival with full digital proof of delivery.</p>
+      </div>
+
+    </div>
+
+    <!-- CTA Button -->
+    <div class="text-center mt-20 fade-up">
+      <a href="process.html" class="inline-flex items-center bg-[#1D4189] hover:bg-[#F05A28] text-white font-black px-12 py-5 rounded-full shadow-2xl transition-all transform hover:scale-105 uppercase tracking-widest">
+        Full Logistics Roadmap
+        <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- TESTIMONIALS -->
+
+<section class="py-32 bg-slate-50 relative overflow-hidden">
+  <!-- Decorative Background: Subtle Navy Swoosh mimicking the logo -->
+  <div class="absolute top-0 right-0 w-1/4 h-full bg-[#1D4189]/5 skew-x-[-15deg] translate-x-20 pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+    <!-- Heading: Using Logo Typography Style -->
+    <div class="text-center mb-20 fade-up">
+      <h2 class="text-4xl md:text-6xl font-black text-[#1D4189] mb-6 tracking-tighter uppercase">
+        What Our <span class="text-[#F05A28]">Clients</span> Say
+      </h2>
+      <div class="w-24 h-1.5 bg-[#F05A28] mx-auto mb-8 rounded-full"></div>
+      <p class="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed font-medium">
+        Trusted by companies worldwide for fast, secure, and reliable logistics solutions.
+      </p>
+    </div>
+
+    <!-- Testimonial Cards -->
+    <div class="grid md:grid-cols-3 gap-10">
+
+      <!-- Testimonial 1 -->
+      <div class="group bg-white rounded-3xl p-10 shadow-sm border-b-4 border-transparent hover:border-[#F05A28] hover:shadow-2xl transition-all duration-500 fade-up relative">
+        <!-- Quote Icon in Logo Blue -->
+        <div class="text-6xl text-[#1D4189]/10 absolute top-6 right-8 font-serif italic">“</div>
+        
+        <p class="text-slate-600 italic mb-8 relative z-10 leading-relaxed text-lg">
+          "PrimeLogix handled our shipments flawlessly. Their tracking and delivery were on point — a truly professional team."
+        </p>
+
+        <div class="flex items-center gap-5">
+          <div class="w-14 h-14 rounded-2xl bg-[#1D4189] text-white flex items-center justify-center text-xl font-black shadow-lg shadow-[#1D4189]/20 group-hover:bg-[#F05A28] transition-colors duration-500">
+            A
+          </div>
+          <div>
+            <p class="font-black text-[#1D4189] uppercase tracking-tight">Alice Morgan</p>
+            <p class="text-[#F05A28] text-xs font-bold uppercase tracking-widest">Global Freight Inc.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="group bg-white rounded-3xl p-10 shadow-sm border-b-4 border-transparent hover:border-[#F05A28] hover:shadow-2xl transition-all duration-500 fade-up relative">
+        <div class="text-6xl text-[#1D4189]/10 absolute top-6 right-8 font-serif italic">“</div>
+        <p class="text-slate-600 italic mb-8 relative z-10 leading-relaxed text-lg">
+          "Their global network and timely deliveries make them our top logistics partner. Highly recommended for large-scale operations."
+        </p>
+        <div class="flex items-center gap-5">
+          <div class="w-14 h-14 rounded-2xl bg-[#1D4189] text-white flex items-center justify-center text-xl font-black shadow-lg shadow-[#1D4189]/20 group-hover:bg-[#F05A28] transition-colors duration-500">
+            M
+          </div>
+          <div>
+            <p class="font-black text-[#1D4189] uppercase tracking-tight">Mark Thompson</p>
+            <p class="text-[#F05A28] text-xs font-bold uppercase tracking-widest">FastShip Ltd.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="group bg-white rounded-3xl p-10 shadow-sm border-b-4 border-transparent hover:border-[#F05A28] hover:shadow-2xl transition-all duration-500 fade-up relative">
+        <div class="text-6xl text-[#1D4189]/10 absolute top-6 right-8 font-serif italic">“</div>
+        <p class="text-slate-600 italic mb-8 relative z-10 leading-relaxed text-lg">
+          "The PrimeLogix team manages our complex supply chain seamlessly. Their support and communication are top-notch."
+        </p>
+        <div class="flex items-center gap-5">
+          <div class="w-14 h-14 rounded-2xl bg-[#1D4189] text-white flex items-center justify-center text-xl font-black shadow-lg shadow-[#1D4189]/20 group-hover:bg-[#F05A28] transition-colors duration-500">
+            S
+          </div>
+          <div>
+            <p class="font-black text-[#1D4189] uppercase tracking-tight">Sofia Lee</p>
+            <p class="text-[#F05A28] text-xs font-bold uppercase tracking-widest">TransGlobal Corp.</p>
+          </div>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- INDUSTRIES / CARGO TYPES -->
-<section class="bg-slate-950 py-24">
-  <div class="max-w-7xl mx-auto px-6">
 
-    <!-- SECTION HEADER -->
-    <div class="max-w-2xl mb-16">
-      <h2 class="text-3xl font-semibold text-white">
-        Cargo Types We Handle
+<!-- CALL TO ACTION BANNER -->
+
+<!-- Use the exact Navy from the logo's "PRIME" text -->
+<section class="py-32 bg-[#1D4189] text-white relative overflow-hidden">
+  
+  <!-- Decorative background "Arrow" element mimicking the logo icon -->
+  <div class="absolute inset-0 opacity-10 pointer-events-none">
+    <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <path d="M0 100 L50 0 L100 100 Z" fill="white" />
+    </svg>
+  </div>
+
+  <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+    <!-- Use the Logo's Bold, Uppercase Typography Style -->
+    <h2 class="text-4xl md:text-6xl font-black mb-8 tracking-tighter uppercase leading-tight">
+      Ready to Move Your <br class="hidden md:block"> 
+      <span class="text-[#F05A28]">Business Forward?</span>
+    </h2>
+
+    <p class="text-blue-100/80 max-w-2xl mx-auto mb-12 text-lg md:text-xl leading-relaxed">
+      Partner with <span class="font-bold">PrimeLogix</span> for reliable, fast, and secure logistics solutions. Let’s deliver results together.
+    </p>
+
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+      <!-- Primary Action: Branding Orange -->
+      <a href="#contact" class="w-full sm:w-auto bg-[#F05A28] hover:bg-[#d84a1e] text-white font-black px-12 py-5 rounded-full shadow-2xl shadow-black/20 transition-all transform hover:-translate-y-1 active:scale-95 uppercase tracking-wide">
+        Request a Quote
+      </a>
+
+      <!-- Secondary Action: Transparent with Border -->
+      <a href="#services" class="w-full sm:w-auto border-2 border-white/30 hover:border-white hover:bg-white hover:text-[#1D4189] transition-all duration-300 font-bold px-12 py-5 rounded-full uppercase tracking-wide">
+        See Our Services
+      </a>
+    </div>
+
+    <!-- Small Trust Signal below buttons -->
+    <p class="mt-10 text-blue-200/50 text-xs uppercase tracking-[0.2em] font-semibold">
+      Global Logistics Solutions • 24/7 Support
+    </p>
+  </div>
+</section>
+
+
+<!-- OUR TEAM -->
+
+<!-- OUR TEAM (Refined Light Version) -->
+<section class="py-32 bg-slate-50 relative overflow-hidden">
+  <!-- Subtle globe grid background using the Navy color at very low opacity -->
+  <div class="absolute inset-0 opacity-[0.05] pointer-events-none" style="background-image: radial-gradient(#1D4189 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+    <!-- Heading: High contrast Navy on Light Gray -->
+    <div class="text-center mb-24 fade-up">
+      <h2 class="text-4xl md:text-6xl font-black text-[#1D4189] mb-6 tracking-tighter uppercase">
+        The Minds Behind <span class="text-[#F05A28]">PrimeLogix</span>
       </h2>
-      <p class="mt-4 text-slate-400">
-        Extensive experience handling a wide range of cargo across Tanzania
-        and East Africa, ensuring your shipment is in capable hands.
+      <div class="w-24 h-1.5 bg-[#F05A28] mx-auto mb-8 rounded-full"></div>
+      <p class="text-slate-500 max-w-2xl mx-auto text-lg leading-relaxed font-medium">
+        A team of logistics experts driving secure, reliable, and scalable solutions for your business.
       </p>
     </div>
 
-    <!-- INDUSTRIES GRID -->
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
+    <!-- Team Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-      <!-- CARGO TYPE 1 -->
-      <div class="p-6 rounded-xl bg-slate-900 border border-slate-800 flex flex-col items-center text-center">
-        <h3 class="text-lg font-semibold text-white mb-2">General Cargo</h3>
-        <p class="text-sm text-slate-400">Daily shipments of mixed goods and standard freight.</p>
+      <!-- Team Member Template (Improved Contrast) -->
+      <div class="group fade-up bg-white border border-slate-200 rounded-3xl p-8 text-center hover:shadow-2xl hover:shadow-[#1D4189]/10 transition-all duration-500">
+        
+        <div class="relative w-40 h-40 mx-auto mb-6">
+           <!-- Orange frame stays as a brand signature -->
+           <div class="absolute inset-0 border-2 border-[#F05A28] rounded-2xl rotate-3 group-hover:rotate-0 transition-transform duration-500"></div>
+           <img src="https://www.tcgen.com/images/about-tcgen/john-carter_hu_a3f257c26e578ba9.webp" alt="John Carter" class="relative w-full h-full rounded-2xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500 shadow-lg">
+        </div>
+
+        <h3 class="font-black text-xl mb-1 text-[#1D4189] uppercase tracking-tight">John Carter</h3>
+        <p class="text-[#F05A28] font-bold text-xs uppercase tracking-[0.2em] mb-4">Chief Executive Officer</p>
+        <p class="text-slate-500 text-sm leading-relaxed">15+ years of global logistics leadership and operational excellence.</p>
       </div>
 
-      <!-- CARGO TYPE 2 -->
-      <div class="p-6 rounded-xl bg-slate-900 border border-slate-800 flex flex-col items-center text-center">
-        <h3 class="text-lg font-semibold text-white mb-2">Vehicles</h3>
-        <p class="text-sm text-slate-400">Cars, trucks, and motorcycles handled safely and efficiently.</p>
+      
+      <!-- Team Member Template (Improved Contrast) -->
+      <div class="group fade-up bg-white border border-slate-200 rounded-3xl p-8 text-center hover:shadow-2xl hover:shadow-[#1D4189]/10 transition-all duration-500">
+        
+        <div class="relative w-40 h-40 mx-auto mb-6">
+           <!-- Orange frame stays as a brand signature -->
+           <div class="absolute inset-0 border-2 border-[#F05A28] rounded-2xl rotate-3 group-hover:rotate-0 transition-transform duration-500"></div>
+           <img src="https://www.tcgen.com/images/about-tcgen/john-carter_hu_a3f257c26e578ba9.webp" alt="John Carter" class="relative w-full h-full rounded-2xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500 shadow-lg">
+        </div>
+
+        <h3 class="font-black text-xl mb-1 text-[#1D4189] uppercase tracking-tight">John Carter</h3>
+        <p class="text-[#F05A28] font-bold text-xs uppercase tracking-[0.2em] mb-4">Chief Executive Officer</p>
+        <p class="text-slate-500 text-sm leading-relaxed">15+ years of global logistics leadership and operational excellence.</p>
       </div>
 
-      <!-- CARGO TYPE 3 -->
-      <div class="p-6 rounded-xl bg-slate-900 border border-slate-800 flex flex-col items-center text-center">
-        <h3 class="text-lg font-semibold text-white mb-2">Construction Materials</h3>
-        <p class="text-sm text-slate-400">Steel, cement, and other building materials transported securely.</p>
+      
+      <!-- Team Member Template (Improved Contrast) -->
+      <div class="group fade-up bg-white border border-slate-200 rounded-3xl p-8 text-center hover:shadow-2xl hover:shadow-[#1D4189]/10 transition-all duration-500">
+        
+        <div class="relative w-40 h-40 mx-auto mb-6">
+           <!-- Orange frame stays as a brand signature -->
+           <div class="absolute inset-0 border-2 border-[#F05A28] rounded-2xl rotate-3 group-hover:rotate-0 transition-transform duration-500"></div>
+           <img src="https://www.tcgen.com/images/about-tcgen/john-carter_hu_a3f257c26e578ba9.webp" alt="John Carter" class="relative w-full h-full rounded-2xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500 shadow-lg">
+        </div>
+
+        <h3 class="font-black text-xl mb-1 text-[#1D4189] uppercase tracking-tight">John Carter</h3>
+        <p class="text-[#F05A28] font-bold text-xs uppercase tracking-[0.2em] mb-4">Chief Executive Officer</p>
+        <p class="text-slate-500 text-sm leading-relaxed">15+ years of global logistics leadership and operational excellence.</p>
       </div>
 
-      <!-- CARGO TYPE 4 -->
-      <div class="p-6 rounded-xl bg-slate-900 border border-slate-800 flex flex-col items-center text-center">
-        <h3 class="text-lg font-semibold text-white mb-2">Electronics</h3>
-        <p class="text-sm text-slate-400">High-value electronics moved with care and compliance.</p>
+      
+      <!-- Team Member Template (Improved Contrast) -->
+      <div class="group fade-up bg-white border border-slate-200 rounded-3xl p-8 text-center hover:shadow-2xl hover:shadow-[#1D4189]/10 transition-all duration-500">
+        
+        <div class="relative w-40 h-40 mx-auto mb-6">
+           <!-- Orange frame stays as a brand signature -->
+           <div class="absolute inset-0 border-2 border-[#F05A28] rounded-2xl rotate-3 group-hover:rotate-0 transition-transform duration-500"></div>
+           <img src="https://www.tcgen.com/images/about-tcgen/john-carter_hu_a3f257c26e578ba9.webp" alt="John Carter" class="relative w-full h-full rounded-2xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500 shadow-lg">
+        </div>
+
+        <h3 class="font-black text-xl mb-1 text-[#1D4189] uppercase tracking-tight">John Carter</h3>
+        <p class="text-[#F05A28] font-bold text-xs uppercase tracking-[0.2em] mb-4">Chief Executive Officer</p>
+        <p class="text-slate-500 text-sm leading-relaxed">15+ years of global logistics leadership and operational excellence.</p>
       </div>
 
-      <!-- CARGO TYPE 5 -->
-      <div class="p-6 rounded-xl bg-slate-900 border border-slate-800 flex flex-col items-center text-center">
-        <h3 class="text-lg font-semibold text-white mb-2">FMCG</h3>
-        <p class="text-sm text-slate-400">Fast-moving consumer goods delivered reliably.</p>
-      </div>
-
-      <!-- CARGO TYPE 6 -->
-      <div class="p-6 rounded-xl bg-slate-900 border border-slate-800 flex flex-col items-center text-center">
-        <h3 class="text-lg font-semibold text-white mb-2">Project Cargo</h3>
-        <p class="text-sm text-slate-400">Oversized and complex shipments handled with expertise.</p>
-      </div>
+      
 
     </div>
   </div>
 </section>
 
-<!-- QUOTE / CONTACT SECTION -->
-<section id="contact" class="bg-slate-900 py-24">
-  <div class="max-w-7xl mx-auto px-6">
+<!-- CONTACT SECTION -->
+ <!-- REFINED CTA BANNER -->
+<section class="py-24 bg-[#1D4189] text-white text-center relative overflow-hidden rounded-3xl shadow-2xl">
+  
+  <!-- Subtle globe grid background pattern mimicking the logo's icon -->
+  <div class="absolute inset-0 opacity-[0.05] pointer-events-none" style="background-image: radial-gradient(white 1px, transparent 1px); background-size: 40px 40px;"></div>
 
-    <!-- SECTION HEADER -->
-    <div class="max-w-2xl mb-12 text-center mx-auto">
-      <h2 class="text-3xl font-semibold text-white">
-        Request a Quote or Contact Us
+  <!-- Decorative Orange "Forward Arrow" Accent -->
+  <div class="absolute right-0 bottom-0 w-1/4 h-full bg-[#F05A28]/10 skew-x-[-20deg] translate-x-20 pointer-events-none"></div>
+
+  <div class="relative z-10 max-w-4xl mx-auto px-6">
+    <!-- Heading: Heavy font weight matching the "PRIME" logotype -->
+    <h2 class="text-4xl md:text-6xl font-black mb-6 tracking-tighter uppercase leading-tight">
+      Ready to Optimize Your <br>
+      <span class="text-[#F05A28]">Logistics?</span>
+    </h2>
+    
+    <div class="w-20 h-1.5 bg-[#F05A28] mx-auto mb-8 rounded-full"></div>
+
+    <p class="text-blue-100/80 text-lg md:text-xl mb-12 max-w-2xl mx-auto font-medium leading-relaxed">
+      Partner with <strong>PrimeLogix</strong> for scalable, secure, and efficient global logistics solutions. Let's move your business forward.
+    </p>
+
+    <!-- Button: Pill-shaped with exact Brand Orange match -->
+    <a href="#contact" class="inline-flex items-center bg-[#F05A28] hover:bg-[#d84a1e] px-12 py-5 rounded-full text-white font-black uppercase tracking-widest shadow-xl shadow-orange-900/40 transition-all transform hover:-translate-y-1 active:scale-95">
+      Request a Quote
+      <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+    </a>
+  </div>
+
+</section>
+
+<section class="py-28 bg-gray-50 fade-up">
+  <div class="max-w-4xl mx-auto px-6">
+
+    <!-- Heading -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-5xl font-black text-[#1D4189] mb-4 uppercase tracking-tight">
+        Get a <span class="text-[#F05A28]">Free</span> Quote
+        
+    <div class="w-20 h-1.5 bg-[#F05A28] mx-auto mt-8 mb-8 rounded-full"></div>
       </h2>
-      <p class="mt-4 text-slate-400">
-        Fill out the form below or reach us directly via WhatsApp, phone, or email.
+      <p class="text-gray-500 max-w-2xl mx-auto">
+        Fill out the form below and our logistics experts will get back to you with a tailored solution.
       </p>
     </div>
 
-    <!-- CONTACT GRID -->
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
+    <!-- Form -->
+    <form class="bg-blue-900 rounded-3xl shadow-xl p-10 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-6">
 
-      <!-- FORM -->
-      <form class="bg-slate-950 p-8 rounded-xl border border-slate-800 space-y-4 shadow-lg">
-        <div>
-          <label for="name" class="block text-sm text-slate-400">Full Name</label>
-          <input type="text" id="name" placeholder="John Doe"
-                 class="w-full mt-1 px-4 py-2 rounded-lg bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-emerald-500" required>
-        </div>
+      <!-- Name -->
+      <div class="flex flex-col">
+        <label for="name" class="mb-2 font-semibold text-white">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="John Doe"
+               class="rounded-xl border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#F05A28] focus:border-[#F05A28] transition">
+      </div>
 
-        <div>
-          <label for="cargo" class="block text-sm text-slate-400">Cargo Type</label>
-          <input type="text" id="cargo" placeholder="General Cargo / Vehicles"
-                 class="w-full mt-1 px-4 py-2 rounded-lg bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-emerald-500" required>
-        </div>
+      <!-- Email -->
+      <div class="flex flex-col">
+        <label for="email" class="mb-2 font-semibold text-white">Email</label>
+        <input type="email" id="email" name="email" placeholder="john@example.com"
+               class="rounded-xl border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#F05A28] focus:border-[#F05A28] transition">
+      </div>
 
-        <div>
-          <label for="phone" class="block text-sm text-slate-400">Phone Number</label>
-          <input type="tel" id="phone" placeholder="+255 7XX XXX XXX"
-                 class="w-full mt-1 px-4 py-2 rounded-lg bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-emerald-500" required>
-        </div>
+      <!-- Phone -->
+      <div class="flex flex-col">
+        <label for="phone" class="mb-2 font-semibold text-white">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="+255 7XX XXX XXX"
+               class="rounded-xl border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#F05A28] focus:border-[#F05A28] transition">
+      </div>
 
-        <div>
-          <label for="port" class="block text-sm text-slate-400">Port</label>
-          <input type="text" id="port" placeholder="Dar es Salaam / Tanga"
-                 class="w-full mt-1 px-4 py-2 rounded-lg bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-emerald-500" required>
-        </div>
+      <!-- Company -->
+      <div class="flex flex-col">
+        <label for="company" class="mb-2 font-semibold text-white">Company (Optional)</label>
+        <input type="text" id="company" name="company" placeholder="Your Company"
+               class="rounded-xl border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#F05A28] focus:border-[#F05A28] transition">
+      </div>
 
+      <!-- Service Type -->
+      <div class="flex flex-col">
+        <label for="service" class="mb-2 font-semibold text-gray-200">Service Type</label>
+        <select id="service" name="service"
+                class="rounded-xl border border-gray-200 px-4 py-3 focus:outline-none text-black focus:ring-2 focus:ring-[#F05A28] focus:border-[#F05A28] transition">
+          <option value="">Select a Service</option>
+          <option value="freight">Freight Shipping</option>
+          <option value="warehousing">Warehousing</option>
+          <option value="supply-chain">Supply Chain Management</option>
+          <option value="custom-logistics">Custom Logistics</option>
+        </select>
+      </div>
+
+      <!-- Cargo Details / Message (full width) -->
+      <div class="flex flex-col md:col-span-2">
+        <label for="details" class="mb-2 font-semibold text-white">Cargo Details / Message</label>
+        <textarea id="details" name="details" rows="5" placeholder="Provide details about your shipment or requirements..."
+                  class="rounded-xl border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#F05A28] focus:border-[#F05A28] transition"></textarea>
+      </div>
+
+      <!-- Submit Button (full width) -->
+      <div class="md:col-span-2 text-center mt-2">
         <button type="submit"
-                class="w-full mt-4 px-6 py-3 bg-emerald-500 text-slate-900 font-medium rounded-lg hover:bg-emerald-400 transition">
-          Submit Quote Request
+                class="bg-[#F05A28] hover:bg-[#d84a1e] text-white font-black uppercase px-12 py-5 rounded-full shadow-xl shadow-black/20 transition transform hover:-translate-y-1">
+          Get My Quote
         </button>
-      </form>
-
-      <!-- CONTACT INFO -->
-      <div class="space-y-6 text-slate-300">
-        <h3 class="text-xl font-semibold text-white">Contact Us Directly</h3>
-        <p class="text-sm">Reach out anytime via WhatsApp, phone, or email.</p>
-
-        <div class="flex items-center gap-3">
-          <span class="font-semibold text-emerald-400">📞</span>
-          <a href="tel:+255788296274" class="hover:text-white transition">+255 788 296 274</a>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <span class="font-semibold text-emerald-400">✉️</span>
-          <a href="mailto:demo@logistics.com" class="hover:text-white transition">demo@logistics.com</a>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <span class="font-semibold text-emerald-400">💬</span>
-          <a href="https://wa.me/255788296274" target="_blank" class="hover:text-white transition">
-            WhatsApp Us
-          </a>
-        </div>
       </div>
 
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT US SECTION -->
-<section class="bg-slate-950 py-24">
-  <div class="max-w-7xl mx-auto px-6">
-
-    <!-- SECTION HEADER -->
-    <div class="max-w-2xl mb-12 text-center mx-auto">
-      <h2 class="text-3xl font-semibold text-white">
-        About Our Company
-      </h2>
-      <p class="mt-4 text-slate-400">
-        Trusted clearing and forwarding experts with years of experience
-        in Tanzania’s logistics sector.
-      </p>
-    </div>
-
-    <!-- ABOUT GRID -->
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-
-      <!-- TEXT CONTENT -->
-      <div class="space-y-6">
-        <p class="text-slate-300">
-          <span class="font-semibold text-white">Years in Business:</span> 8+ years
-        </p>
-        <p class="text-slate-300">
-          <span class="font-semibold text-white">Location:</span> Dar es Salaam, Tanzania
-        </p>
-        <p class="text-slate-300">
-          <span class="font-semibold text-white">Mission:</span> To provide fast, compliant, and reliable logistics solutions that keep your cargo moving safely.
-        </p>
-        <p class="text-slate-300">
-          <span class="font-semibold text-white">Legal Registration:</span> Fully registered under Tanzanian law (TIN: 123456789)
-        </p>
-      </div>
-
-      <!-- OPTIONAL VISUAL -->
-      <div class="hidden lg:flex justify-center">
-  <img 
-    src="thumbnails/tanware.avif" 
-    alt="Our Team / Warehouse / Port Visual" 
-    class="h-64 w-64 rounded-2xl object-cover border border-slate-800"
-  />
-</div>
-
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS / CLIENTS -->
-<section class="bg-slate-900 py-24">
-  <div class="max-w-7xl mx-auto px-6">
-
-    <!-- SECTION HEADER -->
-    <div class="max-w-2xl mb-16 text-center mx-auto">
-      <h2 class="text-3xl font-semibold text-white">
-        Trusted by Clients Across Tanzania
-      </h2>
-      <p class="mt-4 text-slate-400">
-        We work with a variety of businesses, providing reliable clearing
-        and forwarding solutions that keep cargo moving safely.
-      </p>
-    </div>
-
-    <!-- CLIENT LOGOS GRID -->
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center mb-16">
-
-  <img src="thumbnails/gsm logo.png" 
-       alt="Client 1 Logo" 
-       class="h-24  object-contain rounded-2xl border border-slate-700 ">
-
-  <img src="thumbnails/azam logo.jpg" 
-       alt="Client 2 Logo" 
-       class="h-24  object-contain rounded-2xl border border-slate-700">
-
-  <img src="thumbnails/MY LOG.jpg" 
-       alt="Client 3 Logo" 
-       class="h-24 object-contain rounded-2xl border border-slate-700 ">
-
-  <img src="thumbnails/alaf logo.jpg" 
-       alt="Client 4 Logo" 
-       class="h-24 object-contain rounded-2xl border border-slate-700">
-
-  <img src="thumbnails/simtank.webp" 
-       alt="Client 5 Logo" 
-       class="h-24 object-contain rounded-2xl border border-slate-700">
-
-  <img src="thumbnails/motors.jpg" 
-       alt="Client 6 Logo" 
-       class="h-24 object-contain rounded-2xl border border-slate-700">
-</div>
-
-
-
-    <!-- SHORT TESTIMONIALS -->
-    <div class="grid md:grid-cols-3 gap-12">
-      <div class="p-6 rounded-xl bg-slate-950 border border-slate-800">
-        <p class="text-slate-400 text-sm mb-4">
-          “Fast clearance and reliable delivery every time. Highly recommended!”
-        </p>
-        <h4 class="text-white font-semibold">– James M., Importer</h4>
-      </div>
-
-      <div class="p-6 rounded-xl bg-slate-950 border border-slate-800">
-        <p class="text-slate-400 text-sm mb-4">
-          “Transparent pricing and excellent communication throughout.”
-        </p>
-        <h4 class="text-white font-semibold">– Fatuma K., Exporter</h4>
-      </div>
-
-      <div class="p-6 rounded-xl bg-slate-950 border border-slate-800">
-        <p class="text-slate-400 text-sm mb-4">
-          “Their team knows the ports inside out. Very trustworthy!”
-        </p>
-        <h4 class="text-white font-semibold">– Samuel L., Logistics Manager</h4>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- FAQ SECTION -->
-<section class="bg-slate-950 py-24">
-  <div class="max-w-7xl mx-auto px-6">
-
-    <!-- SECTION HEADER -->
-    <div class="max-w-2xl mb-16 text-center mx-auto">
-      <h2 class="text-3xl font-semibold text-white">
-        Frequently Asked Questions
-      </h2>
-      <p class="mt-4 text-slate-400">
-        Answers to the most common queries from our clients.
-      </p>
-    </div>
-
-    <!-- FAQ GRID -->
-    <div class="grid gap-6 max-w-4xl mx-auto">
-
-      <!-- FAQ ITEM 1 -->
-      <div class="p-6 rounded-xl bg-slate-900 border border-slate-800">
-        <h3 class="text-white font-semibold text-lg cursor-pointer">
-          How long does clearance take?
-        </h3>
-        <p class="mt-2 text-slate-400 text-sm">
-          Typically 2–5 working days, depending on cargo type and port.
-        </p>
-      </div>
-
-      <!-- FAQ ITEM 2 -->
-      <div class="p-6 rounded-xl bg-slate-900 border border-slate-800">
-        <h3 class="text-white font-semibold text-lg cursor-pointer">
-          What documents are required?
-        </h3>
-        <p class="mt-2 text-slate-400 text-sm">
-          Commercial invoice, packing list, bill of lading, and ID for the consignee.
-        </p>
-      </div>
-
-      <!-- FAQ ITEM 3 -->
-      <div class="p-6 rounded-xl bg-slate-900 border border-slate-800">
-        <h3 class="text-white font-semibold text-lg cursor-pointer">
-          Do you handle transit cargo?
-        </h3>
-        <p class="mt-2 text-slate-400 text-sm">
-          Yes, we manage transit goods across borders with full documentation.
-        </p>
-      </div>
-
-      <!-- FAQ ITEM 4 -->
-      <div class="p-6 rounded-xl bg-slate-900 border border-slate-800">
-        <h3 class="text-white font-semibold text-lg cursor-pointer">
-          Do you clear vehicles?
-        </h3>
-        <p class="mt-2 text-slate-400 text-sm">
-          Absolutely, we clear cars, trucks, and motorcycles efficiently.
-        </p>
-      </div>
-
-    </div>
+    </form>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-slate-900 text-slate-300 py-12">
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+<footer class="bg-[#1D4189] text-blue-100/70 py-24 relative overflow-hidden mt-20">
+  
+  <!-- Subtle globe grid background pattern matching the logo icon -->
+  <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(white 1px, transparent 1px); background-size: 40px 40px;"></div>
+  
+  <!-- Decorative Orange Accent mirroring the logo's forward motion -->
+  <div class="absolute right-0 bottom-0 w-1/4 h-full bg-[#F05A28]/5 skew-x-[-20deg] translate-x-20 pointer-events-none"></div>
 
-    <!-- CONTACT INFO -->
-    <div>
-      <h4 class="text-white font-semibold mb-4">Contact Us</h4>
-      <p class="flex items-center gap-2">
-        📞 <a href="tel:+255788296274" class="hover:text-emerald-400 transition">+255 788 296 274</a>
-      </p>
-      <p class="flex items-center gap-2 mt-2">
-        💬 <a href="https://wa.me/255788296274" target="_blank" class="hover:text-emerald-400 transition">WhatsApp Us</a>
-      </p>
-      <p class="flex items-center gap-2 mt-2">
-        ✉️ <a href="mailto:demo@logistics.com" class="hover:text-emerald-400 transition">demo@logistics.com</a>
-      </p>
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+    <!-- Top Footer Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+
+      
+      <div class="fade-up">
+        <!-- Using a white-version of your logo for premium contrast -->
+        <img src="assets/image_b7bb81d8.png" alt="PrimeLogix" class="h-16 mb-8">
+        <p class="text-sm leading-relaxed mb-8">
+          Delivering secure, reliable, and scalable logistics solutions. We move your business forward with the power of <strong>PrimeLogix</strong> global intelligence.
+        </p>
+        <div class="flex gap-4">
+          <!-- Social Icons using FontAwesome -->
+          <a href="#" class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center hover:bg-[#F05A28] hover:text-white transition-all duration-300 border border-white/10">
+            <i class="fab fa-linkedin-in text-sm"></i>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center hover:bg-[#F05A28] hover:text-white transition-all duration-300 border border-white/10">
+            <i class="fab fa-twitter text-sm"></i>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center hover:bg-[#F05A28] hover:text-white transition-all duration-300 border border-white/10">
+            <i class="fab fa-facebook-f text-sm"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Services -->
+      <div class="fade-up">
+        <h4 class="text-white font-black text-xs uppercase tracking-[0.25em] mb-8 border-l-4 border-[#F05A28] pl-4">Services</h4>
+        <ul class="space-y-4 text-sm font-medium">
+          <li><a href="#services" class="hover:text-[#F05A28] transition-colors flex items-center gap-2">
+            <i class="fas fa-chevron-right text-[10px] text-[#F05A28]/50"></i> Freight Transport
+          </a></li>
+          <li><a href="#services" class="hover:text-[#F05A28] transition-colors flex items-center gap-2">
+            <i class="fas fa-chevron-right text-[10px] text-[#F05A28]/50"></i> Global Shipping
+          </a></li>
+          <li><a href="#services" class="hover:text-[#F05A28] transition-colors flex items-center gap-2">
+            <i class="fas fa-chevron-right text-[10px] text-[#F05A28]/50"></i> Warehousing
+          </a></li>
+          <li><a href="#services" class="hover:text-[#F05A28] transition-colors flex items-center gap-2">
+            <i class="fas fa-chevron-right text-[10px] text-[#F05A28]/50"></i> Final Delivery
+          </a></li>
+        </ul>
+      </div>
+
+      <!-- Corporate -->
+      <div class="fade-up">
+        <h4 class="text-white font-black text-xs uppercase tracking-[0.25em] mb-8 border-l-4 border-[#F05A28] pl-4">Corporate</h4>
+        <ul class="space-y-4 text-sm font-medium">
+          <li><a href="#about" class="hover:text-[#F05A28] transition-colors">Our Mission</a></li>
+          <li><a href="#team" class="hover:text-[#F05A28] transition-colors">Leadership Team</a></li>
+          <li><a href="#careers" class="hover:text-[#F05A28] transition-colors">Global Careers</a></li>
+          <li><a href="#contact" class="hover:text-[#F05A28] transition-colors">Strategic Partnerships</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Hub -->
+      <div class="fade-up">
+        <h4 class="text-white font-black text-xs uppercase tracking-[0.25em] mb-8 border-l-4 border-[#F05A28] pl-4">Contact Hub</h4>
+        <ul class="space-y-6 text-sm">
+          <li class="flex items-start gap-4">
+            <i class="fas fa-map-marker-alt text-[#F05A28] mt-1"></i>
+            <span>123 Logistics Avenue,<br>Suite 500, New York, NY</span>
+          </li>
+          <li class="flex items-center gap-4">
+            <i class="fas fa-envelope text-[#F05A28]"></i>
+            <a href="mailto:solutions@primelogix.com" class="hover:text-white transition-colors">solutions@primelogix.com</a>
+          </li>
+          <li class="flex items-center gap-4">
+            <i class="fas fa-phone-alt text-[#F05A28]"></i>
+            <a href="tel:+1234567890" class="hover:text-white transition-colors font-bold">+1 (234) 567-890</a>
+          </li>
+        </ul>
+      </div>
+
     </div>
 
-    <!-- QUICK LINKS -->
-    <div>
-      <h4 class="text-white font-semibold mb-4">Quick Links</h4>
-      <ul class="space-y-2">
-        <li><a href="#home" class="hover:text-emerald-400 transition">Home</a></li>
-        <li><a href="#services" class="hover:text-emerald-400 transition">Services</a></li>
-        <li><a href="#process" class="hover:text-emerald-400 transition">How It Works</a></li>
-        <li><a href="#contact" class="hover:text-emerald-400 transition">Request a Quote</a></li>
-        <li><a href="#about" class="hover:text-emerald-400 transition">About Us</a></li>
-      </ul>
+    <!-- Bottom Footer -->
+    <div class="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.2em] font-black">
+      <p class="text-blue-100/40">© 2026 PRIMELOGIX GLOBAL. ALL RIGHTS RESERVED.</p>
+      <div class="flex gap-10 mt-6 md:mt-0">
+        <a href="#" class="hover:text-[#F05A28] transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-[#F05A28] transition-colors">Terms of Service</a>
+        <a href="#" class="hover:text-[#F05A28] transition-colors">Sitemap</a>
+      </div>
     </div>
 
-    <!-- COMPLIANCE / NOTE -->
-    <div>
-      <h4 class="text-white font-semibold mb-4">Legal & Compliance</h4>
-      <p class="text-sm text-slate-400">
-        Fully registered under Tanzanian law. TIN: 123456789<br>
-        TRA compliant & authorized for cargo clearance and forwarding.
-      </p>
-    </div>
-
-  </div>
-
-  <!-- COPYRIGHT -->
-  <div class="mt-12 border-t border-slate-800 pt-6 text-center text-slate-500 text-sm">
-    &copy; 2026 LogisticsDemo. All Rights Reserved.
   </div>
 </footer>
 
 
+<script>
 
-  <script>
-    const menuBtn = document.getElementById("menu-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const line1 = document.querySelector(".line1");
-    const line2 = document.querySelector(".line2");
-    const line3 = document.querySelector(".line3");
+/* mobile menu */
 
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("mobileMenu");
 
-      // Animate hamburger to X
-      line1.classList.toggle("rotate-45");
-      line1.classList.toggle("translate-y-2");
+btn.onclick = () => {
+menu.classList.toggle("hidden");
+};
 
-      line2.classList.toggle("opacity-0");
 
-      line3.classList.toggle("-rotate-45");
-      line3.classList.toggle("-translate-y-2");
-    });
-  </script>
+/* animation */
+
+const faders = document.querySelectorAll(".fade-up");
+
+const appear = new IntersectionObserver(
+(entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+}
+);
+
+faders.forEach(el=>appear.observe(el));
+
+</script>
+
 
 </body>
 </html>
