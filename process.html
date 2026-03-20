@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -99,55 +99,47 @@ Get Quote
 
 </nav>
 <!-- HERO SECTION -->
- <section class="relative py-32 text-white text-center overflow-hidden">
 
-  <!-- background image -->
-  <div class="absolute inset-0">
-    <img src="assets/processes.jpg"
-         class="w-full h-full object-cover">
+
+<section class="relative py-40 flex items-center justify-center overflow-hidden">
+  
+  <!-- Background with Brand-Aligned Overlay -->
+  <div class="absolute inset-0 z-0">
+    <img src="assets/processes.jpg" alt="Logistics Background" class="w-full h-full object-cover">
+    <!-- Using the Logo Navy as a sophisticated gradient overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-[#1D4189]/90 to-[#1D4189]/60"></div>
   </div>
 
-  <!-- brand overlay -->
-  <div class="absolute inset-0 bg-[#1D4189]/80"></div>
+  <!-- Subtle Logo Arrow Motif (Decorative) -->
+  <div class="absolute right-0 bottom-0 w-1/3 h-full bg-[#F05A28]/10 skew-x-[-20deg] translate-x-32 pointer-events-none"></div>
 
-  <!-- swoosh -->
-  <div class="absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-[-20deg] translate-x-20"></div>
+  <!-- Content -->
+  <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+    
+    <!-- Tagline mirroring the logo style -->
+    <p class="uppercase tracking-[0.4em] text-[#F05A28] mb-6 font-black text-sm fade-up">
+      Reliable • Fast • Secure
+    </p>
 
-
-  <!-- content -->
-  <div class="relative max-w-4xl mx-auto px-6 z-10">
-
-    <h1 class="text-5xl md:text-6xl font-black uppercase tracking-tight mb-6">
+    <!-- Headline: Heavy font weight matching the "PRIME" logotype -->
+    <h1 class="text-5xl md:text-6xl font-black uppercase text-white tracking-tight mb-6">
       Our <span class="text-[#F05A28]">Workflow</span>
     </h1>
 
-    <p class="text-blue-100/80 text-lg md:text-xl mb-10">
-      A structured, step-by-step logistics process designed to ensure
+    <div class="w-24 h-1.5 bg-[#F05A28] mx-auto mb-10 rounded-full"></div>
+
+    <p class="text-blue-100/80 text-lg md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed font-medium fade-up">
+     A structured, step-by-step logistics process designed to ensure
       speed, reliability, and full transparency from planning to delivery.
-    </p>
+     </p>
 
-
-    <a href="#contact"
-       class="inline-flex items-center
-              bg-[#F05A28] hover:bg-[#d84a1e]
-              px-12 py-5 rounded-full
-              font-black uppercase tracking-wider
-              shadow-xl shadow-black/30
-              transition transform hover:-translate-y-1">
-
-      Get Consultation
-
-      <svg class="w-5 h-5 ml-2"
-           fill="none"
-           stroke="currentColor"
-           viewBox="0 0 24 24">
-        <path stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-      </svg>
-
-    </a>
+    <!-- Button: Pill-shaped for a modern enterprise look -->
+    <div class="fade-up">
+      <a href="#contact" class="inline-flex items-center bg-[#F05A28] hover:bg-[#d84a1e] px-12 py-5 rounded-full text-white font-black uppercase tracking-widest shadow-2xl shadow-orange-900/40 transition-all transform hover:-translate-y-1 active:scale-95">
+        Request a Quote
+        <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+      </a>
+    </div>
 
   </div>
 
@@ -171,7 +163,7 @@ Get Quote
     </span>
 
     <h2 class="text-4xl md:text-5xl font-black text-[#1D4189] mb-4 uppercase tracking-tight">
-      How We Work
+      How We <span class="text-[#F05A28]"> Work</span>
     </h2>
 
     <p class="text-gray-500 max-w-3xl mx-auto">
@@ -186,119 +178,69 @@ Get Quote
   <!-- steps -->
   <div class="max-w-7xl mx-auto px-6 grid gap-10 md:grid-cols-2 lg:grid-cols-3 relative z-10">
 
-
-    <!-- Step -->
-    <div class="bg-white border border-gray-200 rounded-3xl p-8 text-center hover:shadow-xl transition">
-
-      <div class="w-16 h-16 mx-auto mb-5 flex items-center justify-center
-                  rounded-2xl bg-[#F05A28]/10 text-[#F05A28] text-2xl">
-
-        📝
-
+ <!-- Step 1. -->
+      <div class="group bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-[#F05A28]/10 transition-all duration-500 overflow-hidden flex flex-col">
+        <div class="h-56 w-full bg-slate-200 overflow-hidden relative">
+          <img src="assets/planning.jpeg" alt="Freight Transport" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+        </div>
+        <div class="p-10 flex-grow">
+          <h3 class="font-black text-xl mb-4 text-[#1D4189] group-hover:text-[#F05A28] transition-colors uppercase tracking-tight">Discovery and Planning</h3>
+          <p class="text-slate-500 leading-relaxed text-sm mb-6">We analyze your logistics needs and design the most efficient transport strategy.</p>
+          <span class="text-[#F05A28] font-bold text-xs uppercase tracking-widest flex items-center group-hover:translate-x-2 transition-all">Details <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg></span>
+        </div>
       </div>
 
-      <h3 class="font-bold text-xl text-[#1D4189] mb-2">
-        Discovery & Planning
-      </h3>
 
-      <p class="text-gray-600 text-sm">
-        We analyze your logistics needs and design the most
-        efficient transport strategy.
-      </p>
-
-    </div>
-
-
-
-    <!-- Step -->
-    <div class="bg-white border border-gray-200 rounded-3xl p-8 text-center hover:shadow-xl transition">
-
-      <div class="w-16 h-16 mx-auto mb-5 flex items-center justify-center
-                  rounded-2xl bg-[#F05A28]/10 text-[#F05A28] text-2xl">
-
-        🚛
-
+ <!-- Step 2. -->
+      <div class="group bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-[#F05A28]/10 transition-all duration-500 overflow-hidden flex flex-col">
+        <div class="h-56 w-full bg-slate-200 overflow-hidden relative">
+          <img src="assets/transport.jpg" alt="Freight Transport" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+        </div>
+        <div class="p-10 flex-grow">
+          <h3 class="font-black text-xl mb-4 text-[#1D4189] group-hover:text-[#F05A28] transition-colors uppercase tracking-tight">Transport & Scheduling</h3>
+          <p class="text-slate-500 leading-relaxed text-sm mb-6">Routes, carriers, and timing are optimized for reliable and fast delivery.</p>
+          <span class="text-[#F05A28] font-bold text-xs uppercase tracking-widest flex items-center group-hover:translate-x-2 transition-all">Details <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg></span>
+        </div>
       </div>
 
-      <h3 class="font-bold text-xl text-[#1D4189] mb-2">
-        Transport & Scheduling
-      </h3>
-
-      <p class="text-gray-600 text-sm">
-        Routes, carriers, and timing are optimized for
-        reliable and fast delivery.
-      </p>
-
-    </div>
-
-
-
-    <!-- Step -->
-    <div class="bg-white border border-gray-200 rounded-3xl p-8 text-center hover:shadow-xl transition">
-
-      <div class="w-16 h-16 mx-auto mb-5 flex items-center justify-center
-                  rounded-2xl bg-[#F05A28]/10 text-[#F05A28] text-2xl">
-
-        📡
-
+      
+ <!-- Step 3. -->
+      <div class="group bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-[#F05A28]/10 transition-all duration-500 overflow-hidden flex flex-col">
+        <div class="h-56 w-full bg-slate-200 overflow-hidden relative">
+          <img src="assets/tracking.webp" alt="Freight Transport" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+        </div>
+        <div class="p-10 flex-grow">
+          <h3 class="font-black text-xl mb-4 text-[#1D4189] group-hover:text-[#F05A28] transition-colors uppercase tracking-tight">Tracking & Visibility</h3>
+          <p class="text-slate-500 leading-relaxed text-sm mb-6">Real-time monitoring gives you full visibility at every stage of the shipment.</p>
+          <span class="text-[#F05A28] font-bold text-xs uppercase tracking-widest flex items-center group-hover:translate-x-2 transition-all">Details <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg></span>
+        </div>
       </div>
 
-      <h3 class="font-bold text-xl text-[#1D4189] mb-2">
-        Tracking & Visibility
-      </h3>
-
-      <p class="text-gray-600 text-sm">
-        Real-time monitoring gives you full visibility
-        at every stage of the shipment.
-      </p>
-
-    </div>
-
-
-
-    <!-- Step -->
-    <div class="bg-white border border-gray-200 rounded-3xl p-8 text-center hover:shadow-xl transition">
-
-      <div class="w-16 h-16 mx-auto mb-5 flex items-center justify-center
-                  rounded-2xl bg-[#F05A28]/10 text-[#F05A28] text-2xl">
-
-        📦
-
+      
+ <!-- Step 4. -->
+      <div class="group bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-[#F05A28]/10 transition-all duration-500 overflow-hidden flex flex-col">
+        <div class="h-56 w-full bg-slate-200 overflow-hidden relative">
+          <img src="assets/confirmation.webp" alt="Freight Transport" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+        </div>
+        <div class="p-10 flex-grow">
+          <h3 class="font-black text-xl mb-4 text-[#1D4189] group-hover:text-[#F05A28] transition-colors uppercase tracking-tight">Delivery & Confirmation</h3>
+          <p class="text-slate-500 leading-relaxed text-sm mb-6">Secure delivery with full verification and documented confirmation.</p>
+          <span class="text-[#F05A28] font-bold text-xs uppercase tracking-widest flex items-center group-hover:translate-x-2 transition-all">Details <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg></span>
+        </div>
       </div>
 
-      <h3 class="font-bold text-xl text-[#1D4189] mb-2">
-        Delivery & Confirmation
-      </h3>
-
-      <p class="text-gray-600 text-sm">
-        Secure delivery with full verification and
-        documented confirmation.
-      </p>
-
-    </div>
-
-
-
-    <!-- Step -->
-    <div class="bg-white border border-gray-200 rounded-3xl p-8 text-center hover:shadow-xl transition">
-
-      <div class="w-16 h-16 mx-auto mb-5 flex items-center justify-center
-                  rounded-2xl bg-[#F05A28]/10 text-[#F05A28] text-2xl">
-
-        📊
-
+      
+ <!-- Step 5. -->
+      <div class="group bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-[#F05A28]/10 transition-all duration-500 overflow-hidden flex flex-col">
+        <div class="h-56 w-full bg-slate-200 overflow-hidden relative">
+          <img src="assets/reporting.jpg" alt="Freight Transport" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+        </div>
+        <div class="p-10 flex-grow">
+          <h3 class="font-black text-xl mb-4 text-[#1D4189] group-hover:text-[#F05A28] transition-colors uppercase tracking-tight">Reporting & Optimization</h3>
+          <p class="text-slate-500 leading-relaxed text-sm mb-6">Performance reports help reduce cost and improve future shipments.</p>
+          <span class="text-[#F05A28] font-bold text-xs uppercase tracking-widest flex items-center group-hover:translate-x-2 transition-all">Details <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg></span>
+        </div>
       </div>
-
-      <h3 class="font-bold text-xl text-[#1D4189] mb-2">
-        Reporting & Optimization
-      </h3>
-
-      <p class="text-gray-600 text-sm">
-        Performance reports help reduce cost and
-        improve future shipments.
-      </p>
-
-    </div>
 
 
   </div>
@@ -306,7 +248,7 @@ Get Quote
 </section>
 
 <!-- CTA BANNER -->
- <section class="py-24 bg-[#1D4189] text-white text-center relative overflow-hidden">
+ <section class="py-24 bg-[#1D4189] text-white rounded-3xl text-center relative overflow-hidden">
 
   <!-- swoosh decoration -->
   <div class="absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-[-20deg] translate-x-20"></div>
@@ -346,6 +288,85 @@ Get Quote
 
   </div>
 
+</section>
+
+
+<section id="contact" class="py-28 bg-gray-50 fade-up">
+  <div class="max-w-4xl mx-auto px-6">
+
+    <!-- Heading -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-5xl font-black text-[#1D4189] mb-4 uppercase tracking-tight">
+        Get a <span class="text-[#F05A28]">Free</span> Quote
+        
+    <div class="w-20 h-1.5 bg-[#F05A28] mx-auto mt-8 mb-8 rounded-full"></div>
+      </h2>
+      <p class="text-gray-500 max-w-2xl mx-auto">
+        Fill out the form below and our logistics experts will get back to you with a tailored solution.
+      </p>
+    </div>
+
+    <!-- Form -->
+    <form class="bg-blue-900 rounded-3xl shadow-xl p-10 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- Name -->
+      <div class="flex flex-col">
+        <label for="name" class="mb-2 font-semibold text-white">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="John Doe"
+               class="rounded-xl border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#F05A28] focus:border-[#F05A28] transition">
+      </div>
+
+      <!-- Email -->
+      <div class="flex flex-col">
+        <label for="email" class="mb-2 font-semibold text-white">Email</label>
+        <input type="email" id="email" name="email" placeholder="john@example.com"
+               class="rounded-xl border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#F05A28] focus:border-[#F05A28] transition">
+      </div>
+
+      <!-- Phone -->
+      <div class="flex flex-col">
+        <label for="phone" class="mb-2 font-semibold text-white">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="+255 7XX XXX XXX"
+               class="rounded-xl border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#F05A28] focus:border-[#F05A28] transition">
+      </div>
+
+      <!-- Company -->
+      <div class="flex flex-col">
+        <label for="company" class="mb-2 font-semibold text-white">Company (Optional)</label>
+        <input type="text" id="company" name="company" placeholder="Your Company"
+               class="rounded-xl border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#F05A28] focus:border-[#F05A28] transition">
+      </div>
+
+      <!-- Service Type -->
+      <div class="flex flex-col">
+        <label for="service" class="mb-2 font-semibold text-gray-200">Service Type</label>
+        <select id="service" name="service"
+                class="rounded-xl border border-gray-200 px-4 py-3 focus:outline-none text-black focus:ring-2 focus:ring-[#F05A28] focus:border-[#F05A28] transition">
+          <option value="">Select a Service</option>
+          <option value="freight">Freight Shipping</option>
+          <option value="warehousing">Warehousing</option>
+          <option value="supply-chain">Supply Chain Management</option>
+          <option value="custom-logistics">Custom Logistics</option>
+        </select>
+      </div>
+
+      <!-- Cargo Details / Message (full width) -->
+      <div class="flex flex-col md:col-span-2">
+        <label for="details" class="mb-2 font-semibold text-white">Cargo Details / Message</label>
+        <textarea id="details" name="details" rows="5" placeholder="Provide details about your shipment or requirements..."
+                  class="rounded-xl border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#F05A28] focus:border-[#F05A28] transition"></textarea>
+      </div>
+
+      <!-- Submit Button (full width) -->
+      <div class="md:col-span-2 text-center mt-2">
+        <button type="submit"
+                class="bg-[#F05A28] hover:bg-[#d84a1e] text-white font-black uppercase px-12 py-5 rounded-full shadow-xl shadow-black/20 transition transform hover:-translate-y-1">
+          Get My Quote
+        </button>
+      </div>
+
+    </form>
+  </div>
 </section>
 
 <!-- FOOTER -->
