@@ -48,96 +48,63 @@ rgba(2,6,23,.3)
 <body class="bg-gray-50">
 
 
-<!-- NAVBAR -->
-
-<nav class="fixed w-full z-50 backdrop-blur bg-white border-b">
 
 <!-- PRIME NAV HUB -->
-<nav class="fixed w-full z-50 bg-white backdrop-blur-md border-b border-slate-100 py-4 transition-all duration-300">
-  <div class="max-w-7xl mx-auto flex justify-between items-center px-6">
+ <nav class="fixed w-full z-50 bg-white backdrop-blur-md border-b border-slate-100 py-4 transition-all duration-300">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 relative">
 
-    <!-- Logo with scale effect -->
-    <a href="#home" class="group transition-transform duration-300 hover:scale-105">
+    <!-- Logo -->
+    <a href="#home" class="relative z-10 group transition-transform duration-300 hover:scale-105">
       <img src="assets/image_b7bb81d8.png" alt="PrimeLogix" class="h-14 md:h-16 object-contain">
     </a>
 
-    <!-- Desktop Menu: Industrial Typography -->
+    <!-- Desktop Menu (Untouched) -->
     <ul class="hidden md:flex gap-12 font-black text-xs uppercase tracking-[0.2em] text-[#1D4189]">
-      <a href="#home"> <li class="relative group cursor-pointer hover:text-[#F05A28] transition-colors">
-        Home
-        <span class="absolute -bottom-2 left-0 w-0 h-1 bg-[#F05A28] transition-all duration-300 group-hover:w-full"></span>
-      </li></a>
-      <a href="#services">
-      <li class="relative group cursor-pointer hover:text-[#F05A28] transition-colors">
-        Services
-        <span class="absolute -bottom-2 left-0 w-0 h-1 bg-[#F05A28] transition-all duration-300 group-hover:w-full"></span>
-      </li></a>
-      <a href="#company">
-      <li class="relative group cursor-pointer hover:text-[#F05A28] transition-colors">
-        Company
-        <span class="absolute -bottom-2 left-0 w-0 h-1 bg-[#F05A28] transition-all duration-300 group-hover:w-full"></span>
-      </li></a>
-      <a href="#contact">
-      <li class="relative group cursor-pointer hover:text-[#F05A28] transition-colors">
-        Contact
-        <span class="absolute -bottom-2 left-0 w-0 h-1 bg-[#F05A28] transition-all duration-300 group-hover:w-full"></span>
-      </li></a>
+      <a href="index.html#home"> <li class="relative group cursor-pointer hover:text-[#F05A28] transition-colors">Home<span class="absolute -bottom-2 left-0 w-0 h-1 bg-[#F05A28] transition-all duration-300 group-hover:w-full"></span></li></a>
+      <a href="index.html#services"> <li class="relative group cursor-pointer hover:text-[#F05A28] transition-colors">Services<span class="absolute -bottom-2 left-0 w-0 h-1 bg-[#F05A28] transition-all duration-300 group-hover:w-full"></span></li></a>
+      <a href="index.html#company"> <li class="relative group cursor-pointer hover:text-[#F05A28] transition-colors">Company<span class="absolute -bottom-2 left-0 w-0 h-1 bg-[#F05A28] transition-all duration-300 group-hover:w-full"></span></li></a>
+      <a href="index.html#contact"> <li class="relative group cursor-pointer hover:text-[#F05A28] transition-colors">Contact<span class="absolute -bottom-2 left-0 w-0 h-1 bg-[#F05A28] transition-all duration-300 group-hover:w-full"></span></li></a>
     </ul>
 
-    <!-- High-Conversion CTA Button -->
-     <a href="#contact">
-    <button class="hidden md:block bg-[#F05A28] hover:bg-[#d84a1e] text-white px-8 py-3.5 rounded-full font-black uppercase tracking-widest text-[10px] shadow-xl shadow-orange-600/20 transition-all transform hover:-translate-y-1 active:scale-95">
-      Get Quote
-    </button></a>
+    <!-- CTA (Untouched) -->
+    <a href="index.html#contact">
+      <button class="hidden md:block bg-[#F05A28] hover:bg-[#d84a1e] text-white px-8 py-3.5 rounded-full font-black uppercase tracking-widest text-[10px] shadow-xl shadow-orange-600/20 transition-all transform hover:-translate-y-1 active:scale-95">
+        Get Quote
+      </button>
+    </a>
 
-    <!-- Triple-Bar Hamburger for Mobile -->
-    <button id="menuBtn" class="md:hidden flex flex-col gap-1.5 focus:outline-none group">
-      <span class="w-8 h-1 bg-[#1D4189] rounded-full transition-all group-hover:bg-[#F05A28]"></span>
-      <span class="w-8 h-1 bg-[#1D4189] rounded-full transition-all group-hover:bg-[#F05A28]"></span>
-      <span class="w-8 h-1 bg-[#1D4189] rounded-full transition-all group-hover:bg-[#F05A28]"></span>
+    <!-- Hamburger (Z-INDEX FIXED) -->
+    <button id="menuBtn" class="md:hidden flex flex-col gap-1.5 focus:outline-none group relative z-[60]">
+      <span id="line1" class="w-8 h-1 bg-[#1D4189] rounded-full transition-all duration-300"></span>
+      <span id="line2" class="w-8 h-1 bg-[#1D4189] rounded-full transition-all duration-300"></span>
+      <span id="line3" class="w-8 h-1 bg-[#1D4189] rounded-full transition-all duration-300"></span>
     </button>
+  </div>
 
+  <!-- Fullscreen Slide-in Menu (Left to Right) -->
+  <div id="mobileMenu" class="fixed inset-0 w-full h-screen bg-white z-50 flex flex-col items-center justify-center -translate-x-full transition-transform duration-500 ease-in-out md:hidden overflow-hidden">
+    <!-- Watermark Logo: Absolute positioned in the background -->
+   <div class="absolute top-9 inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
+    <img src="assets/image_b7bb81d8.png" 
+         alt="" 
+         class="w-full max-w-none opacity-20 scale-110 transition-opacity duration-1000">
+  </div>
+   <ul class="flex flex-col items-center gap-12 font-black text-2xl uppercase tracking-[0.2em] text-[#1D4189]">
+      <li><a href="index.html#home" class="mobile-link hover:text-[#F05A28]">Home</a></li>
+      <li><a href="index.html#services" class="mobile-link hover:text-[#F05A28]">Services</a></li>
+      <li><a href="index.html#company" class="mobile-link hover:text-[#F05A28]">Company</a></li>
+      <li><a href="index.html#contact" class="mobile-link hover:text-[#F05A28]">Contact</a></li>
+      <a href="index.html#contact" class="mobile-link">
+        <button class="bg-[#F05A28] text-white px-12 py-5 rounded-full text-xs font-black uppercase tracking-widest active:scale-95 transition-transform">
+          Get Quote
+        </button>
+      </a>
+    </ul>
   </div>
 </nav>
 
 
-
-<!-- hamburger -->
-
-<button id="menuBtn" class="md:hidden text-orange-500 text-3xl">
-
-☰
-
-</button>
-
-
-</div>
-
-
-<!-- mobile menu -->
-
-<div id="mobileMenu"
-class="hidden md:hidden bg-white border-t">
-
-<ul class="flex flex-col p-4 gap-4 font-semibold">
-
-<li>Home</li>
-<li>Services</li>
-<li>Company</li>
-<li>Contact</li>
-
-<button class="bg-orange-500 text-white px-4 py-2 rounded">
-Get Quote
-</button>
-
-</ul>
-
-</div>
-
-</nav>
-
 <!-- HERO SECTION -->
-<!-- Using the exact Navy Blue from your logo for the overlay to build brand trust -->
 <section id="home" class="h-screen relative flex items-center bg-[url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d')] bg-cover bg-center overflow-hidden">
 
   <!-- Brand-aligned gradient overlay (Navy to Transparent) -->
@@ -168,12 +135,12 @@ Get Quote
 
       <div class="flex flex-col sm:flex-row gap-5">
         <!-- Primary Button: Using Logo Orange -->
-         <a href="#contact" class="bg-[#F05A28] hover:bg-[#d84a1e] text-center text-white px-10 py-5 rounded-full font-black uppercase tracking-widest shadow-2xl shadow-orange-600/30 transition-all transform hover:-translate-y-1 active:scale-95">
+         <a href="index.html#contact" class="bg-[#F05A28] hover:bg-[#d84a1e] text-center text-white px-10 py-5 rounded-full font-black uppercase tracking-widest shadow-2xl shadow-orange-600/30 transition-all transform hover:-translate-y-1 active:scale-95">
   Request Quote
 </a>
 
         <!-- Secondary Button: Modern transparent style -->
-        <a href="services.html" class="backdrop-blur-md text-center bg-white/10 border-2 border-white/20 hover:bg-white hover:text-[#1D4189] px-10 py-5 rounded-full font-black uppercase tracking-widest transition-all shadow-xl">
+        <a href="index.html#services" class="backdrop-blur-md text-center bg-white/10 border-2 border-white/20 hover:bg-white hover:text-[#1D4189] px-10 py-5 rounded-full font-black uppercase tracking-widest transition-all shadow-xl">
           Our Services
         </a>
   </div>
@@ -283,7 +250,7 @@ Get Quote
 
 
 <!-- WHY CHOOSE US -->
-<section id="company" class="py-28 bg-[#1D4189] text-white overflow-hidden relative">
+<section id="about" class="py-28 bg-[#1D4189] text-white overflow-hidden relative">
   <!-- Subtle decorative background element to mimic the logo's arrow/swoosh -->
   <div class="absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-[-20deg] translate-x-20 pointer-events-none"></div>
 
@@ -698,8 +665,6 @@ Get Quote
 
 
 <!-- CALL TO ACTION BANNER -->
-
-<!-- Use the exact Navy from the logo's "PRIME" text -->
 <section class="py-32 bg-[#1D4189] text-white relative overflow-hidden">
   
   <!-- Decorative background "Arrow" element mimicking the logo icon -->
@@ -743,7 +708,7 @@ Get Quote
 <!-- OUR TEAM -->
 
 <!-- OUR TEAM (Refined Light Version) -->
-<section class="py-32 bg-slate-50 relative overflow-hidden">
+<section id="team" class="py-32 bg-slate-50 relative overflow-hidden">
   <!-- Subtle globe grid background using the Navy color at very low opacity -->
   <div class="absolute inset-0 opacity-[0.05] pointer-events-none" style="background-image: radial-gradient(#1D4189 1px, transparent 1px); background-size: 40px 40px;"></div>
 
@@ -829,7 +794,6 @@ Get Quote
 </section>
 
 <!-- CONTACT SECTION -->
- <!-- REFINED CTA BANNER -->
 <section class="py-24 bg-[#1D4189] text-white text-center relative overflow-hidden rounded-3xl shadow-2xl">
   
   <!-- Subtle globe grid background pattern mimicking the logo's icon -->
@@ -955,20 +919,20 @@ Get Quote
       
       <div class="fade-up">
         <!-- Using a white-version of your logo for premium contrast -->
-        <img src="assets/image_b7bb81d8.png" alt="PrimeLogix" class="h-16 mb-8">
+        <img src="assets/image_b7bb81d8.png" alt="PrimeLogix" class="h-16 mb-8 rounded-3xl">
         <p class="text-sm leading-relaxed mb-8">
           Delivering secure, reliable, and scalable logistics solutions. We move your business forward with the power of <strong>PrimeLogix</strong> global intelligence.
         </p>
         <div class="flex gap-4">
           <!-- Social Icons using FontAwesome -->
-          <a href="#" class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center hover:bg-[#F05A28] hover:text-white transition-all duration-300 border border-white/10">
-            <i class="fab fa-linkedin-in text-sm"></i>
+          <a href="https://linkedin.com/in/synlotech-technologies-7252933b2" target="_blank" class="w-12 h-12 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-slate-400 hover:text-primary hover:border-primary/50 transition-all group">
+            <i class="fa-brands fa-linkedin-in text-lg group-hover:scale-110 transition-transform"></i>
           </a>
-         <a href="#" class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center hover:bg-[#F05A28] hover:text-white transition-all duration-300 border border-white/10">
-  <i class="fab fa-x-twitter text-sm"></i>
-</a>
-          <a href="#" class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center hover:bg-[#F05A28] hover:text-white transition-all duration-300 border border-white/10">
-            <i class="fab fa-facebook-f text-sm"></i>
+        <a href="https://x.com/synlotech" class="w-12 h-12 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-slate-400 hover:text-primary hover:border-primary/50 transition-all group">
+            <i class="fa-brands fa-x-twitter text-lg group-hover:scale-110 transition-transform"></i>
+          </a>
+         <a href="https://instagram.com/synlo_tech" target="_blank" class="w-12 h-12 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-slate-400 hover:text-primary hover:border-primary/50 transition-all group">
+            <i class="fa-brands fa-instagram text-lg group-hover:scale-110 transition-transform"></i>
           </a>
         </div>
       </div>
@@ -996,10 +960,9 @@ Get Quote
       <div class="fade-up">
         <h4 class="text-white font-black text-xs uppercase tracking-[0.25em] mb-8 border-l-4 border-[#F05A28] pl-4">Corporate</h4>
         <ul class="space-y-4 text-sm font-medium">
-          <li><a href="#about" class="hover:text-[#F05A28] transition-colors">Our Mission</a></li>
-          <li><a href="#team" class="hover:text-[#F05A28] transition-colors">Leadership Team</a></li>
-          <li><a href="#careers" class="hover:text-[#F05A28] transition-colors">Global Careers</a></li>
-          <li><a href="#contact" class="hover:text-[#F05A28] transition-colors">Strategic Partnerships</a></li>
+          <li><a href="index.html#about" class="hover:text-[#F05A28] transition-colors">Our Mission</a></li>
+          <li><a href="index.html#team" class="hover:text-[#F05A28] transition-colors">Leadership Team</a></li>
+          <li><a href="index.html#contact" class="hover:text-[#F05A28] transition-colors">Strategic Partnerships</a></li>
         </ul>
       </div>
 
@@ -1049,16 +1012,31 @@ Get Quote
 
 
 <script>
+   const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const lines = [document.getElementById('line1'), document.getElementById('line2'), document.getElementById('line3')];
+  const links = document.querySelectorAll('.mobile-link');
 
-/* mobile menu */
+  const toggle = () => {
+    // 1. Slide from left (toggle the transform)
+    mobileMenu.classList.toggle('-translate-x-full');
 
-const btn = document.getElementById("menuBtn");
-const menu = document.getElementById("mobileMenu");
+    // 2. Animate Hamburger to X
+    lines[0].classList.toggle('rotate-45');
+    lines[0].classList.toggle('translate-y-[10px]');
+    lines[1].classList.toggle('opacity-0');
+    lines[2].classList.toggle('-rotate-45');
+    lines[2].classList.toggle('-translate-y-[10px]');
 
-btn.onclick = () => {
-menu.classList.toggle("hidden");
-};
+    // 3. Stop scrolling when menu is open
+    document.body.style.overflow = document.body.style.overflow === 'hidden' ? '' : 'hidden';
+  };
 
+  menuBtn.addEventListener('click', toggle);
+  links.forEach(l => l.addEventListener('click', toggle));
+
+  // Enable tap effects on Safari
+  document.addEventListener("touchstart", function() {}, true);
 
 /* animation */
 
@@ -1076,8 +1054,51 @@ entry.target.classList.add("show");
 
 faders.forEach(el=>appear.observe(el));
 
+/* ios hover */
+ document.addEventListener("touchstart", function() {}, true);
+
 </script>
 
+<a href="https://wa.me/255788296274" target="_blank" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-5 z-50 group"> 
+    <div class="flex items-center gap-3">
+     <!-- Optional Tooltip --> 
+      <span class="hidden md:block opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300 bg-dark text-white text-sm px-4 py-2 rounded-lg shadow-lg"> Chat with us </span> 
+      <!-- Button --> <div class="w-14 h-14 rounded-full bg-green-500 flex items-center justify-center shadow-lg shadow-green-500/80 hover:scale-110 hover:shadow-green-500/60 transition-all duration-300"> <i class="fa-brands fa-whatsapp text-white text-2xl"></i> 
+      </div>
+     </div>
+     </a>
+
+     <a href="tel:+255788296274" target="_blank" aria-label="Call us" class="fixed bottom-24 right-5 z-50 group"> 
+  <div class="flex items-center gap-3">
+
+    <!-- Optional Tooltip --> 
+    <span class="hidden md:block opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300 bg-dark text-white text-sm px-4 py-2 rounded-lg shadow-lg">
+      Call us
+    </span> 
+
+    <!-- Button --> 
+    <div class="w-14 h-14 rounded-full bg-[#F05A28] flex items-center justify-center shadow-lg shadow-primary/80 hover:scale-110 hover:shadow-primary/60 transition-all duration-300"> 
+      <i class="fa-solid fa-phone text-white text-2xl"></i>
+    </div>
+
+  </div>
+</a>
+
+  <a href="tel:+255788296274" target="_blank" aria-label="Call us" class="fixed bottom-24 right-5 z-50 group"> 
+  <div class="flex items-center gap-3">
+
+    <!-- Optional Tooltip --> 
+    <span class="hidden md:block opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300 bg-dark text-white text-sm px-4 py-2 rounded-lg shadow-lg">
+      Call us
+    </span> 
+
+    <!-- Button --> 
+    <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center shadow-lg shadow-primary/80 hover:scale-110 hover:shadow-primary/60 transition-all duration-300"> 
+      <i class="fa-solid fa-phone text-white text-2xl"></i>
+    </div>
+
+  </div>
+</a>
 
 </body>
 </html>
